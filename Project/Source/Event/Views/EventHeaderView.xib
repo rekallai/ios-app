@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EventHeaderView" customModule="Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="471"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of the Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL2-dR-edo">
+                    <rect key="frame" x="20" y="359.5" width="374" height="25.5"/>
+                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starts at 10:00AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbM-Nq-9ze">
+                    <rect key="frame" x="20" y="343" width="374" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Br6-An-wAr">
+                    <rect key="frame" x="187.5" y="307" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="This is the events description item and it gives a short run down of what to expect if you were to attend this event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt9-6f-zus">
+                    <rect key="frame" x="20" y="393" width="374" height="49.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BF-JH-Tvb">
+                    <rect key="frame" x="20" y="451" width="97.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Dd1-zW-syA" customClass="ImageSliderCollectionView" customModule="Project" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="4" width="414" height="310.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Dd1-zW-syA" secondAttribute="height" multiplier="4:3" id="8E6-MD-zev"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sMK-oO-wUi">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="jL2-dR-edo" firstAttribute="top" secondItem="Dd1-zW-syA" secondAttribute="bottom" constant="45" id="9ip-5Y-dwv"/>
+                <constraint firstItem="Wt9-6f-zus" firstAttribute="top" secondItem="jL2-dR-edo" secondAttribute="bottom" constant="8" id="Bpd-QP-ngv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Wt9-6f-zus" secondAttribute="trailing" constant="20" id="Bvg-sU-Mjg"/>
+                <constraint firstItem="9BF-JH-Tvb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="DOb-bd-cIb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jL2-dR-edo" secondAttribute="trailing" constant="20" id="F7w-ct-5fx"/>
+                <constraint firstItem="Br6-An-wAr" firstAttribute="top" secondItem="Dd1-zW-syA" secondAttribute="bottom" constant="-7.5" id="IEA-DF-l7X"/>
+                <constraint firstItem="jL2-dR-edo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="KP5-hf-bme"/>
+                <constraint firstItem="Wt9-6f-zus" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="TgZ-Vu-etZ"/>
+                <constraint firstItem="jbM-Nq-9ze" firstAttribute="trailing" secondItem="jL2-dR-edo" secondAttribute="trailing" id="XcJ-67-iUO"/>
+                <constraint firstItem="9BF-JH-Tvb" firstAttribute="top" secondItem="Wt9-6f-zus" secondAttribute="bottom" constant="8.5" id="a4i-qn-ddu"/>
+                <constraint firstItem="jL2-dR-edo" firstAttribute="top" secondItem="jbM-Nq-9ze" secondAttribute="bottom" constant="1.5" id="aRv-gL-HJe"/>
+                <constraint firstItem="Dd1-zW-syA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fah-I1-cZg"/>
+                <constraint firstItem="Br6-An-wAr" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="g3q-4O-UEf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Dd1-zW-syA" secondAttribute="trailing" id="jhW-m1-YqM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="Dd1-zW-syA" secondAttribute="top" constant="40" id="nPf-VN-dRk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9BF-JH-Tvb" secondAttribute="bottom" constant="3" id="pAQ-gi-jpe"/>
+                <constraint firstItem="jbM-Nq-9ze" firstAttribute="leading" secondItem="jL2-dR-edo" secondAttribute="leading" id="xH3-at-jeX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="categoryLabel" destination="9BF-JH-Tvb" id="8Di-GQ-6tB"/>
+                <outlet property="descriptionLabel" destination="Wt9-6f-zus" id="QuJ-Lx-QNx"/>
+                <outlet property="imageCollectionView" destination="Dd1-zW-syA" id="dvF-kI-fLN"/>
+                <outlet property="imagePage" destination="Br6-An-wAr" id="WJ5-w9-j6D"/>
+                <outlet property="timeLabel" destination="jbM-Nq-9ze" id="786-cm-ite"/>
+                <outlet property="titleLabel" destination="jL2-dR-edo" id="fjI-zS-0jh"/>
+            </connections>
+            <point key="canvasLocation" x="56.521739130434788" y="70.647321428571431"/>
+        </view>
+    </objects>
+</document>

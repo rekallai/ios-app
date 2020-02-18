@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="186" id="Ttb-ii-NfB" customClass="HomeHorizontalCollectionCellSmall" customModule="Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ttb-ii-NfB" id="V5Z-Gu-tCA">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EVENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MW6-3a-HaC">
+                        <rect key="frame" x="15" y="39" width="60.5" height="20.5"/>
+                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="obT-eS-vmT">
+                        <rect key="frame" x="0.0" y="75.5" width="375" height="120"/>
+                        <color key="backgroundColor" name="WhiteBlack"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="obT-eS-vmT" secondAttribute="height" multiplier="25:8" id="fqc-1F-jCq"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="F3i-WQ-Pps">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="Ttb-ii-NfB" id="1ae-eb-gyD"/>
+                            <outlet property="delegate" destination="Ttb-ii-NfB" id="AKr-X4-sIN"/>
+                        </connections>
+                    </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MV2-mW-LJi">
+                        <rect key="frame" x="15" y="220" width="345" height="1"/>
+                        <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="GFK-u3-t1d"/>
+                        </constraints>
+                    </view>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See All" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Is-EU-J40">
+                        <rect key="frame" x="307" y="24" width="53" height="20"/>
+                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" name="WhiteBlack"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="obT-eS-vmT" secondAttribute="trailing" id="1M0-tQ-Typ"/>
+                    <constraint firstAttribute="trailing" secondItem="5Is-EU-J40" secondAttribute="trailing" constant="15" id="4vI-1Q-Nkr"/>
+                    <constraint firstAttribute="bottom" secondItem="MV2-mW-LJi" secondAttribute="bottom" id="8kT-Uw-kK1"/>
+                    <constraint firstItem="MW6-3a-HaC" firstAttribute="leading" secondItem="V5Z-Gu-tCA" secondAttribute="leading" constant="15" id="FME-mo-yLa"/>
+                    <constraint firstItem="obT-eS-vmT" firstAttribute="top" secondItem="MW6-3a-HaC" secondAttribute="bottom" constant="16" id="WY5-2s-TmP"/>
+                    <constraint firstItem="obT-eS-vmT" firstAttribute="leading" secondItem="V5Z-Gu-tCA" secondAttribute="leading" id="Zcc-3e-mzM"/>
+                    <constraint firstAttribute="trailing" secondItem="MV2-mW-LJi" secondAttribute="trailing" constant="15" id="c2A-Ns-BE7"/>
+                    <constraint firstItem="MV2-mW-LJi" firstAttribute="leading" secondItem="V5Z-Gu-tCA" secondAttribute="leading" constant="15" id="kJJ-UX-3ch"/>
+                    <constraint firstItem="MW6-3a-HaC" firstAttribute="top" secondItem="V5Z-Gu-tCA" secondAttribute="top" constant="39" id="oDV-zt-Oev"/>
+                    <constraint firstItem="5Is-EU-J40" firstAttribute="top" secondItem="V5Z-Gu-tCA" secondAttribute="top" constant="24" id="rka-fA-vXe"/>
+                    <constraint firstAttribute="bottom" secondItem="obT-eS-vmT" secondAttribute="bottom" constant="25.5" id="ylq-5z-TRd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="10000" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="collectionView" destination="obT-eS-vmT" id="Tep-kz-K1n"/>
+                <outlet property="separatorHeightConstraint" destination="GFK-u3-t1d" id="oeQ-J0-XC8"/>
+                <outlet property="separatorLeadingConstraint" destination="kJJ-UX-3ch" id="hSd-xa-rws"/>
+                <outlet property="separatorTrailingConstraint" destination="c2A-Ns-BE7" id="hhQ-5J-w6z"/>
+                <outlet property="seperatorLine" destination="MV2-mW-LJi" id="Sq4-ur-geq"/>
+                <outlet property="titleLabel" destination="MW6-3a-HaC" id="FMR-PC-A77"/>
+            </connections>
+            <point key="canvasLocation" x="48.550724637681164" y="-12.053571428571429"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="WhiteBlack">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

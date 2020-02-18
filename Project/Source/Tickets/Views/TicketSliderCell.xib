@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TicketSliderCell" id="gTV-IL-0wX" customClass="TicketSliderCell" customModule="Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3iG-8R-3Z6" customClass="ProxyImageView" customModule="Project" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="44" width="414" height="267"/>
+                    </imageView>
+                    <view alpha="0.87" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XWv-3w-2Uz" userLabel="MaskView">
+                        <rect key="frame" x="0.0" y="44" width="414" height="267"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of the ticket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyS-J5-Whr">
+                                <rect key="frame" x="8" y="237" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TICKET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJy-g7-QUK">
+                                <rect key="frame" x="8" y="220" width="43" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" name="CellHeaderBackground"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="ButtonBackground"/>
+                        <constraints>
+                            <constraint firstItem="hyS-J5-Whr" firstAttribute="top" secondItem="mJy-g7-QUK" secondAttribute="bottom" constant="2" id="V2J-xh-Nnr"/>
+                            <constraint firstItem="hyS-J5-Whr" firstAttribute="leading" secondItem="XWv-3w-2Uz" secondAttribute="leading" constant="8" id="VfA-2K-HgA"/>
+                            <constraint firstItem="mJy-g7-QUK" firstAttribute="leading" secondItem="hyS-J5-Whr" secondAttribute="leading" id="WKp-Mk-1k5"/>
+                            <constraint firstAttribute="bottom" secondItem="hyS-J5-Whr" secondAttribute="bottom" constant="9" id="oX5-C1-LyT"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="muF-0H-Wcq" customClass="RoundedImageView" customModule="Project" customModuleProvider="target">
+                        <rect key="frame" x="100" y="70.5" width="214" height="214"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="muF-0H-Wcq" secondAttribute="height" multiplier="1:1" id="GNK-Lf-BOg"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="3iG-8R-3Z6" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="2XL-7g-D03"/>
+                <constraint firstItem="muF-0H-Wcq" firstAttribute="centerY" secondItem="3iG-8R-3Z6" secondAttribute="centerY" id="3qZ-71-lrJ"/>
+                <constraint firstItem="XWv-3w-2Uz" firstAttribute="centerX" secondItem="3iG-8R-3Z6" secondAttribute="centerX" id="3un-ZK-CBr"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="muF-0H-Wcq" secondAttribute="trailing" constant="100" id="648-P2-5SZ"/>
+                <constraint firstItem="XWv-3w-2Uz" firstAttribute="height" secondItem="3iG-8R-3Z6" secondAttribute="height" id="JB6-Yp-b3K"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="3iG-8R-3Z6" secondAttribute="trailing" id="gLL-Kb-m4B"/>
+                <constraint firstItem="XWv-3w-2Uz" firstAttribute="centerY" secondItem="3iG-8R-3Z6" secondAttribute="centerY" id="gf0-rK-y3w"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="3iG-8R-3Z6" secondAttribute="top" id="jvc-zh-IAE"/>
+                <constraint firstItem="XWv-3w-2Uz" firstAttribute="width" secondItem="3iG-8R-3Z6" secondAttribute="width" id="nyL-fy-ecg"/>
+                <constraint firstItem="3iG-8R-3Z6" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" constant="0.5" id="pOi-yR-85h"/>
+                <constraint firstItem="muF-0H-Wcq" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="100" id="vnN-VE-U4d"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="414" height="310"/>
+            <connections>
+                <outlet property="imageView" destination="3iG-8R-3Z6" id="UEt-hk-L6I"/>
+                <outlet property="nameLabel" destination="hyS-J5-Whr" id="Otw-bg-ovB"/>
+                <outlet property="qrImageView" destination="muF-0H-Wcq" id="pxh-Bn-wIH"/>
+            </connections>
+            <point key="canvasLocation" x="421.73913043478262" y="210.60267857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="ButtonBackground">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CellHeaderBackground">
+            <color red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

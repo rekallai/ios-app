@@ -1,0 +1,230 @@
+{
+  "mapStyle": [
+    {
+      "fill": "#F8F5ED",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Background"
+    },
+    {
+      "fill": "#F8F2DB",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Interior-ParkingLots"
+    },
+    {
+      "fill": "#fcfbf9",
+      "layerName": "Boundary"
+    },
+    {
+      "fill": "#F8F2DB",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "stroke": "#ffffff",
+      "layerName": "Parking-Lots"
+    },
+    {
+      "fill": "#e0dcd7",
+      "layerName": "Parking-Obstacles"
+    },
+    {
+      "fill": "#e2e2e2",
+      "layerName": "Parking-Space"
+    },
+    {
+      "fill": "#edf3f4",
+      "layerName": "Medians"
+    },
+    {
+      "fill": "none",
+      "stroke": "#ffffff",
+      "strokeWidth": 1.0,
+      "layerName": "Ramp-Markings"
+    },
+    {
+      "fill": "#e0dcd7",
+      "opacity": 0.4,
+      "layerName": "Obstacles"
+    },
+    {
+      "fill": "#D3ECF7",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Pattern-Water"
+    },
+    {
+      "fill": "#FDFEFD",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Pattern-Lounge"
+    },
+    {
+      "fill": "#FDFEFD",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Corridor"
+    },
+    {
+      "fill": "#FDFEFD",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Corridors"
+    },
+    {
+      "fill": "#FDFEFD",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Pattern-IndoorFoodCourt-Seating"
+    },
+    {
+      "fill": "#FDFEFD",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Pattern-1"
+    },
+    {
+      "stroke": "#FEFCF8",
+      "strokeWidth": "3",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Streets-SmallAlleys"
+    },
+    {
+      "stroke": "#FFFFFF",
+      "strokeWidth": "5",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Streets-Minor"
+    },
+    {
+      "stroke": "#FFFFFF",
+      "strokeWidth": "10",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Streets-Major"
+    },
+    {
+      "fill": "#C9C9C9",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Mall-Boundary"
+    },
+    {
+      "fill": "#EDEEED",
+      "stroke": "#FDFEFD",
+      "strokeWidth": "0.5",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Units"
+    },
+    {
+      "fill": "#C8D9DE",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Stairs"
+    },
+    {
+      "fill": "#edf3f4",
+      "stroke": "#b9c4c6",
+      "layerName": "Kiosks"
+    },
+    {
+      "fill": "#EFE9D2",
+      "stroke": "#ced0d1",
+      "layerName": "Back-of-house"
+    },
+    {
+      "fill": "#C8D9DE",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Escalators"
+    },
+    {
+      "fill": "#C8D9DE",
+      "strokeOpacity": "1",
+      "opacity": 1,
+      "layerName": "Elevators"
+    },
+    {
+      "fill": "#e0dcd7",
+      "stroke": "#ced0d1",
+      "layerName": "Pattern-3"
+    },
+    {
+      "fill": "none",
+      "layerName": "Pattern-2"
+    },
+    {
+      "fill": "none",
+      "layerName": "CustomArtLayer-7"
+    },
+    {
+      "fill": "none",
+      "layerName": "CustomArtLayer-6"
+    },
+    {
+      "fill": "#fdedce",
+      "stroke": "#d9d9d9",
+      "layerName": "CustomArtLayer-5"
+    },
+    {
+      "fill": "#e0dcd7",
+      "stroke": "#ced0d1",
+      "layerName": "CustomArtLayer-4"
+    },
+    {
+      "fill": "#feedce",
+      "stroke": "#d9d9d9",
+      "layerName": "CustomArtLayer-3"
+    },
+    {
+      "fill": "none",
+      "strokeWidth": 2.0,
+      "layerName": "CustomArtLayer-2"
+    },
+    {
+      "fill": "none",
+      "stroke": "#ffffff",
+      "layerName": "CustomArtLayer-1"
+    }
+  ],
+  "labelStyle": {
+    "fontFamily": "Arial",
+    "fill": "#2B2B2B",
+    "strokeWidth": "1",
+    "strokeOpacity": 0.5,
+    "stroke": "#ffffff"
+  },
+  "amenityStyle": [
+    {
+      "layerName": "background",
+      "fill": "#8995BA",
+      "width": 25,
+      "height": 25
+    },
+    {
+      "layerName": "middleground",
+      "fill": "#ffffff"
+    },
+    {
+      "layerName": "foreground",
+      "fill": "#ffffff"
+    }
+  ],
+  "pathTypeStyle": [
+    {
+      "layerName": "background",
+      "fill": "#84ACBB",
+      "width": 25,
+      "height": 25
+    },
+    {
+      "layerName": "middleground",
+      "fill": "#6998AD"
+    },
+    {
+      "layerName": "foreground",
+      "fill": "#ffffff"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VenueHeaderView" customModule="Project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="518"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ESc-xm-nJd">
+                    <rect key="frame" x="20" y="391.5" width="374" height="106.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUQ-Z6-0hb">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="46.5"/>
+                            <string key="text">Nike delivers innovative products, experiences and services to inspire athletes. Free shipping and returns on every order from certain countries with NikePlus.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjL-s3-JR8" customClass="FillButton" customModule="Project" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="56.5" width="374" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="999" constant="50" id="MUL-bh-uEf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
+                            <state key="normal" title="Tickets">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="actionButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="X9p-XC-Bp7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of the Venue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omh-L4-N23">
+                    <rect key="frame" x="20" y="352.5" width="162.5" height="24.5"/>
+                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opens at 10:00AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFZ-6F-1VR">
+                    <rect key="frame" x="20" y="336.5" width="162.5" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$$$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7j-vv-Uyw">
+                    <rect key="frame" x="351" y="356.5" width="43" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Gej-rP-0Kk" customClass="ImageSliderCollectionView" customModule="Project" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="4" width="414" height="310.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Gej-rP-0Kk" secondAttribute="height" multiplier="4:3" id="4eD-2s-2eU"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="2" id="vVx-Qt-9LC">
+                        <size key="itemSize" width="0.0" height="0.0"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="MDc-xv-XmX">
+                    <rect key="frame" x="187.5" y="307" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" name="WhiteBlack"/>
+            <constraints>
+                <constraint firstItem="ESc-xm-nJd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="3Nw-nQ-eWd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Gej-rP-0Kk" secondAttribute="trailing" id="3vQ-70-1sR"/>
+                <constraint firstItem="Omh-L4-N23" firstAttribute="top" secondItem="fFZ-6F-1VR" secondAttribute="bottom" constant="1.5" id="91n-11-qmv"/>
+                <constraint firstItem="Omh-L4-N23" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="CAD-xq-C3Q"/>
+                <constraint firstAttribute="trailing" secondItem="ESc-xm-nJd" secondAttribute="trailing" constant="20" id="DKv-i5-sAM"/>
+                <constraint firstItem="MDc-xv-XmX" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Mys-oz-E1C"/>
+                <constraint firstItem="MDc-xv-XmX" firstAttribute="top" secondItem="Gej-rP-0Kk" secondAttribute="bottom" constant="-7.5" id="TzR-I3-BKB"/>
+                <constraint firstItem="H7j-vv-Uyw" firstAttribute="trailing" secondItem="ESc-xm-nJd" secondAttribute="trailing" id="YBD-iL-03H"/>
+                <constraint firstItem="fFZ-6F-1VR" firstAttribute="leading" secondItem="Omh-L4-N23" secondAttribute="leading" id="bvY-pg-VQV"/>
+                <constraint firstItem="ESc-xm-nJd" firstAttribute="top" secondItem="Gej-rP-0Kk" secondAttribute="bottom" constant="77" id="jCq-Xn-DPe"/>
+                <constraint firstItem="fFZ-6F-1VR" firstAttribute="trailing" secondItem="Omh-L4-N23" secondAttribute="trailing" id="kgm-3V-nQ1"/>
+                <constraint firstItem="Gej-rP-0Kk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="oJB-0K-LfK"/>
+                <constraint firstItem="Omh-L4-N23" firstAttribute="top" secondItem="Gej-rP-0Kk" secondAttribute="bottom" constant="38" id="r27-bI-ahs"/>
+                <constraint firstItem="H7j-vv-Uyw" firstAttribute="bottom" secondItem="Omh-L4-N23" secondAttribute="bottom" id="sTa-aI-bHI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ESc-xm-nJd" secondAttribute="bottom" constant="20" id="sVe-Pd-hd8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="Gej-rP-0Kk" secondAttribute="top" constant="40" id="wLA-1S-q2t"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="actionButton" destination="gjL-s3-JR8" id="Yf7-8a-NaO"/>
+                <outlet property="buttonStack" destination="ESc-xm-nJd" id="RXg-cK-De5"/>
+                <outlet property="costLabel" destination="H7j-vv-Uyw" id="bvn-WN-dvk"/>
+                <outlet property="descriptionLabel" destination="YUQ-Z6-0hb" id="VHe-AJ-2dH"/>
+                <outlet property="imageCollectionView" destination="Gej-rP-0Kk" id="Zpu-zX-iHk"/>
+                <outlet property="imagePage" destination="MDc-xv-XmX" id="7na-yj-SBi"/>
+                <outlet property="openCloseLabel" destination="fFZ-6F-1VR" id="ALk-e3-7Gu"/>
+                <outlet property="titleLabel" destination="Omh-L4-N23" id="0WA-Rf-zfg"/>
+            </connections>
+            <point key="canvasLocation" x="102.89855072463769" y="212.94642857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="WhiteBlack">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

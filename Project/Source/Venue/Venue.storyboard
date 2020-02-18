@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7JG-Ft-xPl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Venue Detail View Controller-->
+        <scene sceneID="F3i-kf-Xjy">
+            <objects>
+                <viewController storyboardIdentifier="ShopDetailViewController" id="7JG-Ft-xPl" customClass="VenueDetailViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8p7-BY-2eU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FL0-sN-4VQ" customClass="VenueDetailTableView" customModule="Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="WhiteBlack"/>
+                        <constraints>
+                            <constraint firstItem="FL0-sN-4VQ" firstAttribute="top" secondItem="g7Z-7g-YS3" secondAttribute="top" id="dAf-Fk-hze"/>
+                            <constraint firstItem="g7Z-7g-YS3" firstAttribute="bottom" secondItem="FL0-sN-4VQ" secondAttribute="bottom" id="m3Q-Cr-T3g"/>
+                            <constraint firstItem="g7Z-7g-YS3" firstAttribute="trailing" secondItem="FL0-sN-4VQ" secondAttribute="trailing" id="tcG-rS-Y7C"/>
+                            <constraint firstItem="FL0-sN-4VQ" firstAttribute="leading" secondItem="g7Z-7g-YS3" secondAttribute="leading" id="uzH-Zs-KDb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g7Z-7g-YS3"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="FL0-sN-4VQ" id="Gsh-uk-Qij"/>
+                        <segue destination="55y-Ab-bph" kind="show" identifier="ShowVenueSegue" id="UIS-S9-BK0"/>
+                        <segue destination="tUj-aD-FCn" kind="show" identifier="ShowEventSegue" id="Fo4-70-27z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Kj-9V-nhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652" y="-1250"/>
+        </scene>
+        <!--Venue-->
+        <scene sceneID="T6H-qj-v0t">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Venue" id="55y-Ab-bph" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nkj-sr-ate" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-852" y="-828"/>
+        </scene>
+        <!--Event-->
+        <scene sceneID="hrn-JN-DsY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Event" id="tUj-aD-FCn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRt-3v-KPS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-449" y="-828"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="WhiteBlack">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
