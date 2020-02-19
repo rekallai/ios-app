@@ -15,6 +15,6 @@ class ImageSliderCell: UICollectionViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    @IBOutlet weak var imageView: ProxyImageView?
+    @IBOutlet weak var imageView: UIImageView?
 
 }

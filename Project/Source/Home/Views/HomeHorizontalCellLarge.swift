@@ -29,12 +29,12 @@ class HomeHorizontalCellLarge: UICollectionViewCell {
             setTicketsButton()
             venueImageView.image = nil
             if let url = dataItem?.imageUrls?.first {
-                venueImageView.setProxyImage(url: url)
+                venueImageView.af_setImage(withURL: url)
             }
         }
     }
     
-    @IBOutlet var venueImageView: ProxyImageView!
+    @IBOutlet var venueImageView: UIImageView!
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!

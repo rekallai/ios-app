@@ -135,11 +135,6 @@ extension HomeViewController: HomeHorizontalCollectionDelegate {
     }
     
     func userTapped(dataItem: DataItem, sender: UITableViewCell) {
-        if let venue = dataItem as? Venue {
-            guard let vc = UIStoryboard.venueDetail() else { return }
-            vc.venue = venue
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
     }
 }
 

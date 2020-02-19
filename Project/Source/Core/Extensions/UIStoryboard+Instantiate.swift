@@ -26,9 +26,4 @@ extension UIStoryboard {
         return vc
     }
     
-    static func venueDetail()->VenueDetailViewController? {
-        let sb = UIStoryboard(name: "Venue", bundle: nil)
-        guard let vc = sb.instantiateInitialViewController() as? VenueDetailViewController else { return nil }
-        return vc
-    }
 }

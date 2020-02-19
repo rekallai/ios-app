@@ -21,24 +21,6 @@ extension UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
-    func showiOS13Required() {
-        let ac = UIAlertController(title: NSLocalizedString("Update Required", comment: "Error message alert title"),
-                                   message: NSLocalizedString("The onsite map reqires iOS 13 or above",
-                                                              comment: "Error message content"),
-                                   preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: NSLocalizedString("Not Now", comment: "Button title"),
-                                   style: .default,
-                                   handler: nil))
-        ac.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Button title"),
-                                   style: .default,
-                                   handler: { action in
-            if let url = URL.init(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        }))
-        present(ac, animated: true, completion: nil)
-    }
-    
     func showProgress() {
         _ = ADActivitySpinner(targetView: self.view)
     }

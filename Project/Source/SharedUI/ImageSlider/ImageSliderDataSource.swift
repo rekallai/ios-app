@@ -30,7 +30,7 @@ extension ImageSliderDataSource: UICollectionViewDataSource, UICollectionViewDel
             withReuseIdentifier: ImageSliderCell.identifier,
             for: indexPath
         ) as! ImageSliderCell
-        cell.imageView?.setProxyImage(url: imageUrl)
+        cell.imageView?.af_setImage(withURL: imageUrl)
         
         return cell
     }

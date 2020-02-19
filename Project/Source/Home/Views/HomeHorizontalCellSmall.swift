@@ -24,12 +24,12 @@ class HomeHorizontalCellSmall: UICollectionViewCell {
             headerLabel.text = dataItem?.itemTag
             venueImageView.image = nil
             if let url = dataItem?.imageUrls?.first {
-                venueImageView.setProxyImage(url: url)
+                venueImageView.af_setImage(withURL: url)
             }
         }
     }
     
-    @IBOutlet var venueImageView: ProxyImageView!
+    @IBOutlet var venueImageView: UIImageView!
     @IBOutlet var headerLabel: UILabel!
     @IBOutlet var distanceAndTimeLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
