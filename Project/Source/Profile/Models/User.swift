@@ -25,34 +25,6 @@ struct User: Codable {
     static func anonymous()->User {
         return User(id: "", roles: [], interestTopics: [], favoriteVenueIds: [], email: "", firstName: "", lastName: "", createdAt: Date(), updatedAt: Date(), stripeCustomerId: nil, intercomUserHash: nil, optIns: nil)
     }
-    
-    mutating func updateInterest(_ topicName:String) {
-        if interestTopics.contains(topicName) {
-            self.interestTopics.removeAll { (interest) -> Bool in
-                interest == topicName
-            }
-        } else {
-            interestTopics.append(topicName)
-        }
-    }
-    
-    func isInterested(_ interestName:String)->Bool {
-        return interestTopics.contains(interestName)
-    }
-    
-    mutating func updateFavorite(_ venueId:String) {
-        if favoriteVenueIds.contains(venueId) {
-            self.favoriteVenueIds.removeAll { (vid) -> Bool in
-                vid == venueId
-            }
-        } else {
-            favoriteVenueIds.append(venueId)
-        }
-    }
-    
-    func isFavorited(_ venueId:String)->Bool {
-        return favoriteVenueIds.contains(venueId)
-    }
 
     func isAdmin() -> Bool {
         return roles.contains("admin") || roles.contains("admin.read")
