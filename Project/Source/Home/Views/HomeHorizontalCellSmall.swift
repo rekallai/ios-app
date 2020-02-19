@@ -20,7 +20,6 @@ class HomeHorizontalCellSmall: UICollectionViewCell {
         didSet {
             titleLabel.text = dataItem?.name
             subtitleLabel.text = dataItem?.itemShortDescription
-            setTime()
             headerLabel.text = dataItem?.itemTag
             venueImageView.image = nil
             if let url = dataItem?.imageUrls?.first {
@@ -42,13 +41,4 @@ class HomeHorizontalCellSmall: UICollectionViewCell {
         venueImageView.layer.borderColor = #colorLiteral(red: 0.9450980392, green: 0.9450980392, blue: 0.9450980392, alpha: 1)
     }
     
-    func setTime() {
-        if let venue = dataItem as? Venue {
-            if venue.isComingSoon() {
-                distanceAndTimeLabel.text = NSLocalizedString("Coming Soon", comment: "Title")
-            } else {
-                distanceAndTimeLabel.text = venue.openingHours?.getNextOpeningOrClosingEventTime()
-            }
-        }        
-    }
 }

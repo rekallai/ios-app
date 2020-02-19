@@ -16,24 +16,12 @@ class HomeViewController: UIViewController {
     let restaurantsViewModel = VenueViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
     let shopsViewModel = VenueViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
     let attractionsViewModel = VenueViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
-    //let newAndNotableViewModel = VenueViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
 
     enum HomeSections: Int, CaseIterable {
         case attractions
         case shops
         case restaurants
     }
-    
-    private var showingAllTickets = false
-    private let maxTicketsShownWhenCollapsed = 3
-    
-    private var restaurantsDataFailed = false
-    private var shopsDataFailed = false
-    private var attractionsDataFailed = false
-    private var newAndNotableDataFailed = false
-    private var eventDataFailed = false
-    
-    private var isShowingEvents = false
     
     override func viewDidLoad() {
         super.viewDidLoad()

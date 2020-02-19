@@ -205,65 +205,7 @@ public class Venue: NSManagedObject, Decodable, DataItem, CDUpdatable {
         nearbyVenues = try container.decodeIfPresent([NearbyVenue].self, forKey: .nearbyVenues)
         featuredFlags = try container.decodeIfPresent([String].self, forKey: .featuredFlags)
         slug = try container.decodeIfPresent(String.self, forKey: .slug)
-        comingSoon = isComingSoon() //setting for CoreData sorting w/NSSortDescriptor
     }
-    
-    public class func load(id:String)->Venue? {
-            let fr: NSFetchRequest<Venue> = Venue.fetchRequest()
-            fr.predicate = NSPredicate(format: "id == %@", id)
-            fr.sortDescriptors = [NSSortDescriptor(key: "importOrdinal", ascending: true)]
-            let frc = NSFetchedResultsController(fetchRequest: fr,
-                                                 managedObjectContext: ADPersistentContainer.shared.viewContext,
-                                                 sectionNameKeyPath: nil,
-                                                 cacheName: nil)
-            do {
-                try frc.performFetch()
-                guard let venue = frc.fetchedObjects?.first else { return nil }
-                return venue
-            } catch {
-                return nil
-            }
-    }
-    
-    static func venuesOnFloor(floor: Int) -> [Venue] {
-        assert(Thread.current == Thread.main)
-
-        let fr: NSFetchRequest<Venue> = Venue.fetchRequest()
-        fr.predicate = NSPredicate(format: "floorLevel == %d", floor)
-        
-        do {
-            let venues = try ADPersistentContainer.shared.viewContext.fetch(fr)
-            return venues
-        } catch {
-            print("ERROR: Failed to load venues: \(error) ")
-            return [Venue]()
-        }
-    }
-    
-    static public func venueOnFloor(floor: Int, coordinate: CLLocationCoordinate2D) -> Venue? {
-        assert(Thread.current == Thread.main)
-        
-        var bestDistance: Double = Double.greatestFiniteMagnitude
-        var bestVenue: Venue?
-        
-        let venues = venuesOnFloor(floor: floor)
-        for venue in venues {
-            guard let location = venue.location else { continue }
-            let distance = location.distanceTo(coordinate: coordinate)
-            
-            if distance < bestDistance {
-                bestDistance = distance
-                bestVenue = venue
-            }
-        }
-        
-        guard bestDistance < 2 else {
-            return nil
-        }
-        
-        return bestVenue
-    }
-    
     
     func equivalentObjectComparator() -> ((Venue) -> Bool) {
         return { [id] other in
@@ -272,11 +214,5 @@ public class Venue: NSManagedObject, Decodable, DataItem, CDUpdatable {
     }
     
     var itemShortDescription: String? { return itemDescription }
-    var itemTag: String? {
-        if isComingSoon() {
-            return NSLocalizedString("Coming Soon", comment: "Title")
-        } else {
-            return openCloseEvent()
-        }
-    }
+    var itemTag: String? { return name }
 }

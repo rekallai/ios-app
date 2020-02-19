@@ -26,7 +26,6 @@ class HomeHorizontalCellLarge: UICollectionViewCell {
             titleLabel.text = dataItem?.name
             subtitleLabel.text = dataItem?.itemShortDescription
             timeLabel.text = dataItem?.itemTag
-            setTicketsButton()
             venueImageView.image = nil
             if let url = dataItem?.imageUrls?.first {
                 venueImageView.af_setImage(withURL: url)
@@ -52,15 +51,6 @@ class HomeHorizontalCellLarge: UICollectionViewCell {
         ticketsButton.layer.cornerRadius = ticketsButton.bounds.height / 2.0
     }
     
-    func setTicketsButton() {
-        var hideTicket = true
-        if let venue = dataItem as? Venue {
-            hideTicket = (venue.isComingSoon() || !venue.hasTickets)
-        }
-        ticketsButton.isHidden = hideTicket
-        ticketsButton.isEnabled = !hideTicket
-    }
-
     @IBAction func ticketsButtonTapped(_ sender: UIButton) {
         delegate?.ticketsTappedInLargeCell(sender: self)
     }

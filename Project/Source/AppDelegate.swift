@@ -20,19 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if CommandLine.arguments.contains("--uitestingresetappstate") {
             Environment.resetAppState()
         }
-        //dumpAllFonts()
+
         _ = Environment.shared  // Kick environment into life
         FirebaseApp.configure()
         
         return true
-    }
-    
-    func dumpAllFonts() {
-        for familyName in UIFont.familyNames {
-            for fontName in UIFont.fontNames(forFamilyName: familyName) {
-                print("\(fontName)")
-            }
-        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

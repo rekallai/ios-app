@@ -30,7 +30,6 @@ class PreAuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showCancelButton ? addCancelButton() : nil
-        paymentFlowCheck()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,18 +44,6 @@ class PreAuthViewController: UIViewController {
             vc.prefilledEmailAddress = prefilledEmailAddress
             if let authViewModel = authViewModel {
                 vc.viewModel = authViewModel
-            }
-        }
-    }
-    
-    func paymentFlowCheck() {
-        if paymentFlow {
-            if signUpFlow {
-                signInButton.removeFromSuperview()
-                performSegue(withIdentifier: signUpSegue, sender: self)
-            } else {
-                signUpButton.removeFromSuperview()
-                performSegue(withIdentifier: signInSegue, sender: self)
             }
         }
     }
