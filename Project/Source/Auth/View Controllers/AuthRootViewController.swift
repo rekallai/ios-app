@@ -23,7 +23,6 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
     var prefilledEmailAddress: String?
 
     var viewModel = AuthViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
-    var purchasedOrdersViewModel = PurchasedOrdersViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
     
     private var userUpdated = false
     private var ticketsUpdated = false
@@ -59,25 +58,11 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
             self?.showError(error: errorStr)
         }
         
-        UserViewModel.shared.onUpdateUserSuccess = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.userUpdated = true
-            strongSelf.checkLoginComplete()
-        }
-        
-        UserViewModel.shared.onUpdateUserFailure = { [weak self] errorStr in
-            self?.hideProgress()
-            self?.showError(error: errorStr)
-        }
-        
         viewModel.onLoginSuccess = { [weak self] in
             guard let strongSelf = self else { return }
             
             strongSelf.userUpdated = false
             strongSelf.ticketsUpdated = false
-
-            strongSelf.purchasedOrdersViewModel.reloadTicketsFromBackend()
-            UserViewModel.shared.loadUser()
         }
         
         viewModel.onLoginFailure = { [weak self] errorStr in
@@ -100,17 +85,6 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
         viewModel.onRegisterFailure = { [weak self] error in
             self?.hideProgress()
             self?.showError(error: error.localizedDescription)
-        }
-
-        purchasedOrdersViewModel.onUpdateSuccess = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.ticketsUpdated = true
-            strongSelf.checkLoginComplete()
-        }
-        
-        purchasedOrdersViewModel.onUpdateFailure = { [weak self] errorStr in
-            self?.hideProgress()
-            self?.showError(error: errorStr)
         }
         
         if signUpFlow {

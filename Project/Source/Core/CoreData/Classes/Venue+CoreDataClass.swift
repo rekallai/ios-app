@@ -202,7 +202,6 @@ public class Venue: NSManagedObject, Decodable, DataItem, CDUpdatable {
         accessibilityInfo = try container.decodeIfPresent(String.self, forKey: .accessibilityInfo)
         costIndicator = try container.decodeIfPresent(String.self, forKey: .costIndicator)
         hasTickets = try container.decodeIfPresent(Bool.self, forKey: .hasTickets) ?? false
-        attributes = try container.decodeIfPresent([String].self, forKey: .attributes)
         nearbyVenues = try container.decodeIfPresent([NearbyVenue].self, forKey: .nearbyVenues)
         featuredFlags = try container.decodeIfPresent([String].self, forKey: .featuredFlags)
         slug = try container.decodeIfPresent(String.self, forKey: .slug)
@@ -278,23 +277,6 @@ public class Venue: NSManagedObject, Decodable, DataItem, CDUpdatable {
             return NSLocalizedString("Coming Soon", comment: "Title")
         } else {
             return openCloseEvent()
-        }
-    }
-    
-    class func venueForEvent(event: Event) -> Venue? {
-        assert(Thread.current == Thread.main)
-        
-        guard let venueId = event.venueId else { return nil }
-
-        let fr: NSFetchRequest<Venue> = Venue.fetchRequest()
-        fr.predicate = NSPredicate(format: "id == %@", venueId)
-        
-        do {
-            let venues = try ADPersistentContainer.shared.viewContext.fetch(fr)
-            return venues.first
-        } catch {
-            print("ERROR: Failed to load venues: \(error) ")
-            return nil
         }
     }
 }

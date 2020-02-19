@@ -76,7 +76,6 @@ class RootViewController: UIViewController {
     
     private func networkNowAvailable() {
         reloadData(onlyIfPreviouslyFailed: true)
-        UserViewModel.shared.loadUserIfPreviouslyFailed()
     }
     
     func appWillEnterForeground() {
@@ -85,7 +84,6 @@ class RootViewController: UIViewController {
     
     func reloadData(onlyIfPreviouslyFailed: Bool) {
         reloadVenues(onlyIfPreviouslyFailed: onlyIfPreviouslyFailed)
-        reloadEvents(onlyIfPreviouslyFailed: onlyIfPreviouslyFailed)
     }
     
     var lastVenueLoadFailed = false
@@ -110,31 +108,6 @@ class RootViewController: UIViewController {
         
         if lastVenueLoadFailed {
             venueVm.loadVenues()
-        }
-    }
-    
-    var lastEventLoadFailed = false
-    private let eventVm = EventViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
-    func reloadEvents(onlyIfPreviouslyFailed: Bool) {
-        eventVm.onUpdateSuccess = { [weak self] in
-            self?.lastEventLoadFailed = false
-            CoreDataContext.shared.eventsUpdated()
-            ADPersistentContainer.shared.save()
-        }
-        
-        eventVm.onUpdateFailure = { [weak self] errorStr in
-            self?.lastEventLoadFailed = true
-        }
-        
-        guard onlyIfPreviouslyFailed else {
-            if CoreDataContext.shared.eventsNeedUpdated() {
-                eventVm.loadEvents()
-            }
-            return
-        }
-        
-        if lastEventLoadFailed {
-            eventVm.loadEvents()
         }
     }
 }

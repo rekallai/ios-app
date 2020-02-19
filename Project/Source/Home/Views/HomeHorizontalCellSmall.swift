@@ -49,15 +49,6 @@ class HomeHorizontalCellSmall: UICollectionViewCell {
             } else {
                 distanceAndTimeLabel.text = venue.openingHours?.getNextOpeningOrClosingEventTime()
             }
-        }
-        
-        if let event = dataItem as? Event {
-            guard let venue = Venue.venueForEvent(event: event) else {
-                distanceAndTimeLabel.text = nil
-                return
-            }
-            
-            distanceAndTimeLabel.text = venue.openingHours?.openClosed()
-        }
+        }        
     }
 }

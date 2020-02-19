@@ -11,9 +11,10 @@
 ### Set Up Project
 - Install the necessary pods
     - ``pod install``
-    - Configure API endpoints and app information in Environment.swift
 - Open workspace in XCode (``Project.xcworkspace``)
     - You will get ``pod`` issues if you open the ``.xcodeproj`` file
+- Configure API endpoints and app information in Environment.swift
+
 ### Run App
 - Select a simulator and run the app
     - With the 'play' button or command + r

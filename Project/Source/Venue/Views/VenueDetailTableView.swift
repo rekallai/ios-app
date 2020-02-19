@@ -14,7 +14,6 @@ class VenueDetailTableView: UITableView {
         backgroundColor = UIColor(named: "WhiteBlack")!
         register(VenueHeaderView.nib, forHeaderFooterViewReuseIdentifier: VenueHeaderView.identifier)
         register(YourTicketsHeaderCell.nib, forCellReuseIdentifier: YourTicketsHeaderCell.identifier)
-        register(YourTicketsCell.nib, forCellReuseIdentifier: YourTicketsCell.identifier)
         register(DetailPointCell.nib, forCellReuseIdentifier: DetailPointCell.identifier)
         register(DetailHoursCell.nib, forCellReuseIdentifier: DetailHoursCell.identifier)
         register(DetailLinkCell.nib, forCellReuseIdentifier: DetailLinkCell.identifier)

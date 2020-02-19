@@ -34,7 +34,6 @@
                     <connections>
                         <outlet property="tableView" destination="FL0-sN-4VQ" id="Gsh-uk-Qij"/>
                         <segue destination="55y-Ab-bph" kind="show" identifier="ShowVenueSegue" id="UIS-S9-BK0"/>
-                        <segue destination="tUj-aD-FCn" kind="show" identifier="ShowEventSegue" id="Fo4-70-27z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Kj-9V-nhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -48,14 +47,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nkj-sr-ate" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-852" y="-828"/>
-        </scene>
-        <!--Event-->
-        <scene sceneID="hrn-JN-DsY">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Event" id="tUj-aD-FCn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PRt-3v-KPS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-449" y="-828"/>
         </scene>
     </scenes>
     <resources>

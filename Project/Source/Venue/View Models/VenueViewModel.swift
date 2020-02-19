@@ -170,22 +170,11 @@ class VenueViewModel: CoreDataViewModel {
                     }
                 }
             }
-                  
-            guard let categoryList = CategoryList(moc: workMoc) else {
-                print("ERROR: Could not init CategoryList")
-                return 0 // ToDo - error here?
-            }
-            
+                              
             let result = try decodeResponse(VenueSearchResponse.self, response: response, moc: workMoc)
             for venue in result.data {
                 venue.importOrdinal = nextImportOrdinal
-                nextImportOrdinal += 1
-                
-                guard let categoryStrings = venue.rawCategoryStrings else { continue }
-                for c in categoryStrings {
-                    venue.addToCategories(categoryList.category(named: c))
-                    print("Added venue category: \(c)")
-                }
+                nextImportOrdinal += 1                
             }
             
             try workMoc.save()

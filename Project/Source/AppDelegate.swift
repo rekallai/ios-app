@@ -23,10 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //dumpAllFonts()
         _ = Environment.shared  // Kick environment into life
         FirebaseApp.configure()
-        UserViewModel.shared.loadUser()
         
-        ADAnalytics.shared.track(event: "ADDidFinishLaunching")
-                
         return true
     }
     
@@ -50,26 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // reload the data before return from background
-        if let rootVC = application.keyWindow?.rootViewController as? RootViewController {
-            rootVC.appWillEnterForeground()
-        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        let current = UNUserNotificationCenter.current()
-        current.getNotificationSettings { settings in
-            if settings.authorizationStatus == .authorized {
-                DispatchQueue.main.async {
-                    application.registerForRemoteNotifications()
-                }
-            }
-        }
     }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        IntercomManager.setDeviceToken(deviceToken)
-    }
-
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }

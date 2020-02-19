@@ -10,7 +10,6 @@ import UIKit
 
 protocol HomeHorizontalCollectionDelegate: class {
     func userTapped(dataItem: DataItem, sender: UITableViewCell)
-    func userTappedTicketsFor(dataItem: DataItem, sender: UITableViewCell)
 }
 
 class HomeHorizontalCollectionCellLarge: UITableViewCell {
@@ -114,7 +113,6 @@ extension HomeHorizontalCollectionCellLarge: UICollectionViewDataSource, UIColle
             }
             
             cell.dataItem = dataItem
-            cell.delegate = self
             return cell
         }
         
@@ -146,15 +144,4 @@ extension HomeHorizontalCollectionCellLarge: UICollectionViewDataSource, UIColle
 
 extension HomeHorizontalCollectionCellLarge: CollectionViewCoreDataItemUpdate{
     
-}
-
-extension HomeHorizontalCollectionCellLarge: HomeHorizontalCellLargeDelegate {
-    func ticketsTappedInLargeCell(sender: HomeHorizontalCellLarge) {
-        guard let di = sender.dataItem else {
-            print("ERROR: Tickets tapped in cell that does not have a dataItem")
-            return
-        }
-        
-        delegate?.userTappedTicketsFor(dataItem: di, sender: self)
-    }
 }

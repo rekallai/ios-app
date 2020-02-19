@@ -103,8 +103,6 @@ class AuthViewModel: ViewModel {
         do {
             let result = try decodeResponse(AuthResponseRegister.self, response: response, moc: nil)
             store.storeToken(newToken: result.data.token)
-            UserViewModel.shared.isRegisterRequest = true
-            UserViewModel.shared.loadUser()
             print("Result: \(result)")
         } catch {
             print("Failed: \(error)")
@@ -116,7 +114,6 @@ class AuthViewModel: ViewModel {
         do {
             let result = try decodeResponse(AuthResponseLogin.self, response: response, moc: nil)
             store.storeToken(newToken: result.data.token)
-            UserViewModel.shared.loadUser()
             return nil
         } catch {
             print("Failed: \(error)")

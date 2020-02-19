@@ -20,12 +20,7 @@ class SignOutCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        guard UserViewModel.shared.user.isAdmin() else {
-            versionLabel.isHidden = true
-            return
-        }
-                
+                        
         guard let dictionary = Bundle.main.infoDictionary,
         let version = dictionary["CFBundleShortVersionString"] as? String,
         let build = dictionary["CFBundleVersion"] as? String else {

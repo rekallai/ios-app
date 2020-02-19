@@ -47,16 +47,4 @@ public class CoreDataContext: NSManagedObject {
         return Date().timeIntervalSince(lastUpdate) > 60 * 15
     }
     
-    func eventsUpdated() {
-        self.lastEventUpdate = Date()
-    }
-    
-    func eventsNeedUpdated() -> Bool {
-        guard let lastUpdate = lastEventUpdate else {
-            return true
-        }
-        
-        return Date().timeIntervalSince(lastUpdate) > 60 * 15
-    }
-    
 }
