@@ -70,7 +70,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.titleLabel.text = NSLocalizedString("Shopping", comment: "Section title")
             cell.viewModel = shopsViewModel
             cell.separatorView.isHidden = false
-            cell.layoutStyle = .allBigItems
             return cell
         }
     }

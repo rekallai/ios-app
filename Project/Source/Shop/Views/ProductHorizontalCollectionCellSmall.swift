@@ -8,16 +8,20 @@
 
 import UIKit
 
-class HomeHorizontalCollectionCellSmall: UITableViewCell {
+protocol ProductHorizontalCollectionDelegate: class {
+    func userTapped(product: Product, sender: UITableViewCell)
+}
+
+class ProductHorizontalCollectionCellSmall: UITableViewCell {
     
-    static let identifier = "HomeHorizontalCollectionCellSmall"
+    static let identifier = "ProductHorizontalCollectionCellSmall"
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    weak var delegate: HomeHorizontalCollectionDelegate?
+    weak var delegate: ProductHorizontalCollectionDelegate?
     
-    var viewModel: ShopViewModel? {
+    var viewModel: ProductsViewModel? {
         willSet {
             viewModel?.delegate = nil
         }
@@ -52,23 +56,23 @@ class HomeHorizontalCollectionCellSmall: UITableViewCell {
             fl.itemSize = CGSize(width: width, height: height)
         }
         
-        collectionView?.register(HomeHorizontalCellSmall.nib,
-                                 forCellWithReuseIdentifier: HomeHorizontalCellSmall.identifier)
+        collectionView?.register(ProductHorizontalCellSmall.nib,
+                                 forCellWithReuseIdentifier: ProductHorizontalCellSmall.identifier)
     }
 
 }
 
-extension HomeHorizontalCollectionCellSmall: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ProductHorizontalCollectionCellSmall: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.numberOfItems ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let dataItem = viewModel?.shop(at: indexPath.item)
+        let dataItem = viewModel?.product(at: indexPath.item)
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHorizontalCellSmall.identifier,
-                                                            for: indexPath) as? HomeHorizontalCellSmall else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductHorizontalCellSmall.identifier,
+                                                            for: indexPath) as? ProductHorizontalCellSmall else {
                                                                 fatalError("VenuesHorizontalCollectionCell failed to dequeue cell")
         }
         
@@ -77,11 +81,11 @@ extension HomeHorizontalCollectionCellSmall: UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let dataItem = viewModel?.shop(at: indexPath.item) else { return }
-        delegate?.userTapped(dataItem: dataItem, sender: self)
+        guard let dataItem = viewModel?.product(at: indexPath.item) else { return }
+        delegate?.userTapped(product: dataItem, sender: self)
     }
 }
 
-extension HomeHorizontalCollectionCellSmall: CollectionViewCoreDataItemUpdate {
+extension ProductHorizontalCollectionCellSmall: CollectionViewCoreDataItemUpdate {
     
 }

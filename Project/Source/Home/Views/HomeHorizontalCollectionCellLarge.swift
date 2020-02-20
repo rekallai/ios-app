@@ -31,13 +31,6 @@ class HomeHorizontalCollectionCellLarge: UITableViewCell {
         }
     }
     
-    enum LayoutStyle {
-        case allBigItems
-        case twoSmallOneBig
-    }
-    
-    var layoutStyle = LayoutStyle.allBigItems
-    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var collectionView: UICollectionView?
     @IBOutlet var separatorView: UIView!
@@ -79,8 +72,8 @@ class HomeHorizontalCollectionCellLarge: UITableViewCell {
         
         collectionView?.register(HomeHorizontalCellLarge.nib,
                                  forCellWithReuseIdentifier: HomeHorizontalCellLarge.identifier)
-        collectionView?.register(HomeHorizontalCellSmall.nib,
-                                 forCellWithReuseIdentifier: HomeHorizontalCellSmall.identifier)
+        collectionView?.register(ProductHorizontalCellSmall.nib,
+                                 forCellWithReuseIdentifier: ProductHorizontalCellSmall.identifier)
     }
 }
 
@@ -88,12 +81,7 @@ extension HomeHorizontalCollectionCellLarge: UICollectionViewDelegateFlowLayout 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch layoutStyle {
-        case .allBigItems:
-            return largeItemCellSize
-        case .twoSmallOneBig:
-            return (indexPath.item % 3) == 2 ? largeItemCellSize : smallItemCellSize
-        }
+        return largeItemCellSize
     }
 }
 
@@ -106,18 +94,8 @@ extension HomeHorizontalCollectionCellLarge: UICollectionViewDataSource, UIColle
         
         let dataItem = viewModel?.shop(at: indexPath.item)
         
-        if layoutStyle == .allBigItems || (indexPath.item % 3) == 2 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHorizontalCellLarge.identifier,
-                                                                for: indexPath) as? HomeHorizontalCellLarge else {
-                                                                    fatalError("VenuesHorizontalCollectionCell failed to dequeue cell")
-            }
-            
-            cell.dataItem = dataItem
-            return cell
-        }
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHorizontalCellSmall.identifier,
-                                                            for: indexPath) as? HomeHorizontalCellSmall else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHorizontalCellLarge.identifier,
+                                                            for: indexPath) as? HomeHorizontalCellLarge else {
                                                                 fatalError("VenuesHorizontalCollectionCell failed to dequeue cell")
         }
         

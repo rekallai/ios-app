@@ -9,14 +9,14 @@
 import UIKit
 import AlamofireImage
 
-class HomeHorizontalCellSmall: UICollectionViewCell {
+class ProductHorizontalCellSmall: UICollectionViewCell {
     
-    static let identifier = "HomeHorizontalCellSmall"
+    static let identifier = "ProductHorizontalCellSmall"
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    var dataItem: Shop? {
+    var dataItem: Product? {
         didSet {
             titleLabel.text = dataItem?.name
             subtitleLabel.text = dataItem?.itemShortDescription
