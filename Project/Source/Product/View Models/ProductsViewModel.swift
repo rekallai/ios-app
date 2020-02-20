@@ -1,8 +1,8 @@
 //
-//  ShopViewModel.swift
-//  Rekall
+//  ProductsViewModel.swift
+//  Project
 //
-//  Created by Ray Hunter on 05/06/2019.
+//  Created by Ray Hunter on 20/02/2020.
 //  Copyright © 2020 Rekall. All rights reserved.
 //
 
@@ -10,8 +10,9 @@ import UIKit
 import Moya
 import CoreData
 
-class ShopViewModel: CoreDataViewModel {
+class ProductsViewModel: CoreDataViewModel {
     
+    var shopId: String = ""
     var onUpdateSuccess: (() -> Void)?
     var onUpdateFailure: ((String) -> Void)?
         
@@ -29,8 +30,8 @@ class ShopViewModel: CoreDataViewModel {
     
     private var nextImportOrdinal: Int32 = 0
     
-    lazy private(set) var resultsController: NSFetchedResultsController<Shop> = {
-        let fr: NSFetchRequest<Shop> = Shop.fetchRequest()
+    lazy private(set) var resultsController: NSFetchedResultsController<Product> = {
+        let fr: NSFetchRequest<Product> = Product.fetchRequest()
         fr.sortDescriptors = sortDescriptors
         let frc = NSFetchedResultsController(fetchRequest: fr,
                                              managedObjectContext: BRPersistentContainer.shared.viewContext,
@@ -52,23 +53,23 @@ class ShopViewModel: CoreDataViewModel {
     
     func loadVenues() {
         if loadingData {
-            print("ERROR: Shop VM loadVenues: already loading data")
+            print("ERROR: Product VM loadVenues: already loading data")
             return
         }
 
         nextImportOrdinal = 0
-        let venueRequest = ShopRequest(skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
+        let venueRequest = ProductRequest(shopId: shopId, skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
         makeRequest(venueRequest)
     }
     
     private func loadMore() {
-        let venueRequest = ShopRequest(skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
+        let venueRequest = ProductRequest(shopId: shopId, skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
         makeRequest(venueRequest)
     }
     
-    func makeRequest(_ venueRequest:ShopRequest) {
+    func makeRequest(_ venueRequest:ProductRequest) {
         if loadingData {
-            print("ERROR: Shop VM makeRequest: already loading data")
+            print("ERROR: Product VM makeRequest: already loading data")
             return
         }
         BRPersistentContainer.shared.save()
@@ -109,19 +110,19 @@ class ShopViewModel: CoreDataViewModel {
                 //
                 // Delete all venues
                 //
-                let fr: NSFetchRequest<NSFetchRequestResult> = Shop.fetchRequest()
+                let fr: NSFetchRequest<NSFetchRequestResult> = Product.fetchRequest()
                 fr.includesPropertyValues = false
-                if let existingVenues = try workMoc.fetch(fr) as? [Shop] {
+                if let existingVenues = try workMoc.fetch(fr) as? [Product] {
                     for v in existingVenues {
                         workMoc.delete(v)
                     }
                 }
             }
                               
-            let result = try decodeResponse(ShopSearchResponse.self, response: response, moc: workMoc)
+            let result = try decodeResponse(ProductSearchResponse.self, response: response, moc: workMoc)
             for venue in result.data {
                 venue.importOrdinal = nextImportOrdinal
-                nextImportOrdinal += 1                
+                nextImportOrdinal += 1
             }
             
             try workMoc.save()
@@ -132,7 +133,7 @@ class ShopViewModel: CoreDataViewModel {
         }
     }
     
-    func shop(at index: Int) -> Shop? {
+    func product(at index: Int) -> Product? {
         let indexPath = IndexPath(item: index, section: 0)
         return resultsController.object(at: indexPath)
     }
@@ -141,4 +142,3 @@ class ShopViewModel: CoreDataViewModel {
         return resultsController.fetchedObjects?.count ?? 0
     }
 }
-
