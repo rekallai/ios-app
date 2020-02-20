@@ -1,6 +1,6 @@
 import Foundation
 
-private let AppStateTokenKey: String = "com.snoutscan.AppStateTokenKey"
+private let AppStateTokenKey: String = "io.bedrock.AppStateTokenKey"
 
 struct AppState: Codable {
     var token: String?

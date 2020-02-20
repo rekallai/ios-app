@@ -32,8 +32,6 @@ class HomeViewController: UIViewController {
         tableView?.separatorStyle = .none
         tableView?.register(HomeHorizontalCollectionCellLarge.nib,
                             forCellReuseIdentifier: HomeHorizontalCollectionCellLarge.identifier)
-        tableView?.register(HomeHorizontalCollectionCellSmall.nib,
-                            forCellReuseIdentifier: HomeHorizontalCollectionCellSmall.identifier)
     }
                 
     override func viewWillAppear(_ animated: Bool) {
@@ -91,18 +89,8 @@ extension HomeViewController: HomeHorizontalCollectionDelegate {
         return cell
     }
     
-    
-    func smallCollectionScroller(in tableView: UITableView, for indexPath: IndexPath) -> HomeHorizontalCollectionCellSmall {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeHorizontalCollectionCellSmall.identifier,
-                                                       for: indexPath) as? HomeHorizontalCollectionCellSmall else {
-                                                        fatalError("Bad cell type")
-        }
-        
-        cell.delegate = self
-        return cell
-    }
-    
     func userTapped(dataItem: Shop, sender: UITableViewCell) {
+        print("User tapped shop")
     }
 }
 
