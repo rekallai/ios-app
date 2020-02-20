@@ -9,10 +9,6 @@
 import UIKit
 import AlamofireImage
 
-protocol HomeHorizontalCellLargeDelegate: class {
-    func ticketsTappedInLargeCell(sender: HomeHorizontalCellLarge)
-}
-
 class HomeHorizontalCellLarge: UICollectionViewCell {
     
     static let identifier = "HomeHorizontalCellLarge"
@@ -20,7 +16,6 @@ class HomeHorizontalCellLarge: UICollectionViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    weak var delegate: HomeHorizontalCellLargeDelegate?
     var dataItem: Shop? {
         didSet {
             titleLabel.text = dataItem?.name
@@ -37,7 +32,6 @@ class HomeHorizontalCellLarge: UICollectionViewCell {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
-    @IBOutlet var ticketsButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,10 +42,5 @@ class HomeHorizontalCellLarge: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        ticketsButton.layer.cornerRadius = ticketsButton.bounds.height / 2.0
-    }
-    
-    @IBAction func ticketsButtonTapped(_ sender: UIButton) {
-        delegate?.ticketsTappedInLargeCell(sender: self)
     }
 }

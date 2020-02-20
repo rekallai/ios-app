@@ -25,7 +25,6 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
     var viewModel = AuthViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
     
     private var userUpdated = false
-    private var ticketsUpdated = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +61,6 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
             guard let strongSelf = self else { return }
             
             strongSelf.userUpdated = false
-            strongSelf.ticketsUpdated = false
         }
         
         viewModel.onLoginFailure = { [weak self] errorStr in
@@ -113,7 +111,7 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
     }
     
     func checkLoginComplete() {
-        guard userUpdated, ticketsUpdated else {
+        guard userUpdated else {
             return
         }
         

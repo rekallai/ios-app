@@ -18,9 +18,7 @@ class HomeViewController: UIViewController {
     let attractionsViewModel = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
 
     enum HomeSections: Int, CaseIterable {
-        case attractions
         case shops
-        case restaurants
     }
     
     override func viewDidLoad() {
@@ -69,19 +67,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         switch section {
-        case .attractions:
-            let cell = largeCollectionScroller(in: tableView, for: indexPath)
-            cell.titleLabel.text = NSLocalizedString("Don't Miss Out", comment: "Section title")
-            cell.viewModel = attractionsViewModel
-            cell.separatorView.isHidden = false
-            cell.layoutStyle = .allBigItems
-            return cell
-        case .restaurants:
-            let cell = smallCollectionScroller(in: tableView, for: indexPath)
-            cell.titleLabel.text = NSLocalizedString("Dining", comment: "Section title")
-            cell.viewModel = restaurantsViewModel
-            cell.seperatorLine.isHidden = true
-            return cell
         case .shops:
             let cell = largeCollectionScroller(in: tableView, for: indexPath)
             cell.titleLabel.text = NSLocalizedString("Shopping", comment: "Section title")

@@ -53,31 +53,15 @@ Second line (92 Char Limit)</string>
                         <color key="textColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.58823529411764708" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJ0-4y-gee">
-                        <rect key="frame" x="256" y="187" width="74" height="30"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="74" id="b0Z-kl-PlW"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="15"/>
-                        <state key="normal" title="Tickets">
-                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="ticketsButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="mjI-O6-b6S"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="LTj-Ol-Y86" secondAttribute="trailing" id="23t-71-SbA"/>
                 <constraint firstItem="h9z-x7-y1G" firstAttribute="top" secondItem="LTj-Ol-Y86" secondAttribute="bottom" constant="9" id="AFc-EA-qmC"/>
                 <constraint firstAttribute="bottom" secondItem="yCt-6r-cT3" secondAttribute="bottom" priority="999" id="GKC-XZ-wW6"/>
-                <constraint firstItem="yJ0-4y-gee" firstAttribute="top" secondItem="LTj-Ol-Y86" secondAttribute="bottom" constant="10" id="GNL-nP-Y1w"/>
                 <constraint firstItem="h9z-x7-y1G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="P8r-DX-S75"/>
                 <constraint firstAttribute="trailing" secondItem="h9z-x7-y1G" secondAttribute="trailing" constant="82" id="Q8D-py-zo1"/>
                 <constraint firstItem="yCt-6r-cT3" firstAttribute="top" secondItem="xRR-h3-yEl" secondAttribute="bottom" constant="1" id="QQ4-xo-YLN"/>
-                <constraint firstAttribute="trailing" secondItem="yJ0-4y-gee" secondAttribute="trailing" id="VFL-GP-iuF"/>
                 <constraint firstItem="xRR-h3-yEl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="XRf-LC-3Lp"/>
                 <constraint firstAttribute="trailing" secondItem="yCt-6r-cT3" secondAttribute="trailing" id="aeq-qJ-SAu"/>
                 <constraint firstItem="LTj-Ol-Y86" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fSo-em-0fl"/>
@@ -90,7 +74,6 @@ Second line (92 Char Limit)</string>
             <size key="customSize" width="330" height="294"/>
             <connections>
                 <outlet property="subtitleLabel" destination="yCt-6r-cT3" id="0iF-js-POd"/>
-                <outlet property="ticketsButton" destination="yJ0-4y-gee" id="4N1-mZ-iZC"/>
                 <outlet property="timeLabel" destination="h9z-x7-y1G" id="aal-3M-MtZ"/>
                 <outlet property="titleLabel" destination="xRR-h3-yEl" id="ylA-a2-i1R"/>
                 <outlet property="venueImageView" destination="LTj-Ol-Y86" id="0q2-1f-qB0"/>

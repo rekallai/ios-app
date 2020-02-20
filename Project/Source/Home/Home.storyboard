@@ -51,8 +51,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QRw-Ss-uUO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="For You" image="TabForYou" id="czS-tt-vTR"/>
-                    <navigationItem key="navigationItem" title="For You" id="o9L-Ba-pPd"/>
+                    <tabBarItem key="tabBarItem" title="For You" image="TabForYou" id="czS-tt-vTR" userLabel="Shops"/>
+                    <navigationItem key="navigationItem" title="For You" id="o9L-Ba-pPd" userLabel="Shops"/>
                     <connections>
                         <outlet property="tableView" destination="hUs-9h-TPv" id="32N-yO-o9t"/>
                     </connections>

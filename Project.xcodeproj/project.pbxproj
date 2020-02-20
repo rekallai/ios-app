@@ -22,7 +22,6 @@
 		714B210F230EFA1100F016F4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB7F4A22F08E3500C7A822 /* Date+Extensions.swift */; };
 		714B2118230EFA5300F016F4 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA12A3B322C5F24D00F157DD /* Defaults.swift */; };
 		714B2123230EFAA400F016F4 /* Notification+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1E1EE22E8778C006211BA /* Notification+Names.swift */; };
-		714B2150230EFD2B00F016F4 /* PaymentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B214F230EFD2B00F016F4 /* PaymentTests.swift */; };
 		714F4AA122CCEF8F00FCF1A2 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 714F4AA022CCEF8F00FCF1A2 /* SF-Pro-Display-Semibold.otf */; };
 		714F4AB322CE2D4A00FCF1A2 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 714F4AAC22CD00D600FCF1A2 /* SF-Pro-Display-Bold.otf */; };
 		714F4AB422CE2D4A00FCF1A2 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 714F4AAC22CD00D600FCF1A2 /* SF-Pro-Display-Bold.otf */; };
@@ -107,7 +106,6 @@
 		71D1BB44237F1DED00A899E8 /* DirectionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D1BB43237F1DED00A899E8 /* DirectionsTest.swift */; };
 		71DE53D822FB11E100F2AAF7 /* AuthTextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE53D722FB11E100F2AAF7 /* AuthTextInputCell.swift */; };
 		71DE53DA22FB123800F2AAF7 /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE53D922FB123800F2AAF7 /* TextInputCell.swift */; };
-		71F1EC8E231978A200D9F759 /* TicketsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F1EC8C231978A200D9F759 /* TicketsTests.swift */; };
 		AA0753C622D4C2510036498F /* UIStoryboard+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0753C522D4C2510036498F /* UIStoryboard+Instantiate.swift */; };
 		AA0753E422D895D10036498F /* PreAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0753E322D895D10036498F /* PreAuthViewController.swift */; };
 		AA12A3B422C5F24D00F157DD /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA12A3B322C5F24D00F157DD /* Defaults.swift */; };
@@ -157,7 +155,6 @@
 		714660D122C24996006E3ADE /* AnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsTests.swift; sourceTree = "<group>"; };
 		714660D422C25D79006E3ADE /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		714B20FE230EF40E00F016F4 /* CreditCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardTests.swift; sourceTree = "<group>"; };
-		714B214F230EFD2B00F016F4 /* PaymentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTests.swift; sourceTree = "<group>"; };
 		714F4AA022CCEF8F00FCF1A2 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		714F4AAC22CD00D600FCF1A2 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		71678DB223FDA75A000E93A5 /* ShopViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
@@ -223,7 +220,6 @@
 		71DE53D722FB11E100F2AAF7 /* AuthTextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextInputCell.swift; sourceTree = "<group>"; };
 		71DE53D922FB123800F2AAF7 /* TextInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputCell.swift; sourceTree = "<group>"; };
 		71ED005322D4A0280046B739 /* Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Project.entitlements; sourceTree = "<group>"; };
-		71F1EC8C231978A200D9F759 /* TicketsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsTests.swift; sourceTree = "<group>"; };
 		78366420647C30AC9081E3CE /* Pods-Project.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.staging.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.staging.xcconfig"; sourceTree = "<group>"; };
 		81E3E9FE04240E4B3E0828BF /* Pods-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectTests/Pods-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		882E84687916F2D3B66F0465 /* Pods-Project-ProjectUITests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-ProjectUITests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-Project-ProjectUITests/Pods-Project-ProjectUITests.staging.xcconfig"; sourceTree = "<group>"; };
@@ -320,12 +316,12 @@
 			path = SharedUI;
 			sourceTree = "<group>";
 		};
-		71678DB023FDA715000E93A5 /* Venue */ = {
+		71678DB023FDA715000E93A5 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
 				71678DB123FDA736000E93A5 /* View Models */,
 			);
-			path = Venue;
+			path = Shop;
 			sourceTree = "<group>";
 		};
 		71678DB123FDA736000E93A5 /* View Models */ = {
@@ -387,7 +383,6 @@
 				718CDE7522A7D3D900C07C0E /* ADTestCase.swift */,
 				714660D122C24996006E3ADE /* AnalyticsTests.swift */,
 				714B20FE230EF40E00F016F4 /* CreditCardTests.swift */,
-				71F1EC8C231978A200D9F759 /* TicketsTests.swift */,
 				71D1BB43237F1DED00A899E8 /* DirectionsTest.swift */,
 			);
 			path = ProjectTests;
@@ -397,7 +392,6 @@
 			isa = PBXGroup;
 			children = (
 				718CDE0C22A6793A00C07C0E /* Info.plist */,
-				714B214F230EFD2B00F016F4 /* PaymentTests.swift */,
 			);
 			path = ProjectUITests;
 			sourceTree = "<group>";
@@ -405,7 +399,7 @@
 		718CDE1822A6A85300C07C0E /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				71678DB023FDA715000E93A5 /* Venue */,
+				71678DB023FDA715000E93A5 /* Shop */,
 				714F4AA522CCFFD600FCF1A2 /* SharedUI */,
 				71AED16322A9356300A51BEB /* Root */,
 				718CEDC922B2DADF005CB60E /* Profile */,
@@ -1095,7 +1089,6 @@
 				71D1BB44237F1DED00A899E8 /* DirectionsTest.swift in Sources */,
 				714660D222C24996006E3ADE /* AnalyticsTests.swift in Sources */,
 				718CDE3A22A6BD0100C07C0E /* Store+Selectors.swift in Sources */,
-				71F1EC8E231978A200D9F759 /* TicketsTests.swift in Sources */,
 				71AED14E22A928B000A51BEB /* AD+CodingUserInfoKey.swift in Sources */,
 				718CDE6722A6DF3600C07C0E /* DateFormatter+Extensions.swift in Sources */,
 			);
@@ -1105,7 +1098,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				714B2150230EFD2B00F016F4 /* PaymentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
