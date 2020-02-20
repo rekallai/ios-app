@@ -22,9 +22,7 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
     var onboardFlow = false
     var prefilledEmailAddress: String?
 
-    var viewModel = AuthViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
-    
-    private var userUpdated = false
+    var viewModel = AuthViewModel(api: BRApi.shared.api, store: BRApi.shared.store)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +57,7 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
         
         viewModel.onLoginSuccess = { [weak self] in
             guard let strongSelf = self else { return }
-            
-            strongSelf.userUpdated = false
+            strongSelf.delegate?.authSuccessfulIn(sender: strongSelf)
         }
         
         viewModel.onLoginFailure = { [weak self] errorStr in
@@ -109,15 +106,7 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
             showProgress()
         }
     }
-    
-    func checkLoginComplete() {
-        guard userUpdated else {
-            return
-        }
         
-        delegate?.authSuccessfulIn(sender: self)
-    }
-    
     @IBAction func forgotPasswordTapped(_ sender: UIButton) {
         let url = URL(string: Environment.shared.shareBaseUrl + "/forgot-password")!
         UIApplication.shared.open(url, options: [:], completionHandler: nil)

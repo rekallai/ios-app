@@ -22,12 +22,12 @@ extension UIViewController {
     }
     
     func showProgress() {
-        _ = ADActivitySpinner(targetView: self.view)
+        _ = BRActivitySpinner(targetView: self.view)
     }
     
     func hideProgress(completion: (() -> ())? = nil) {
         for v in view.subviews {
-            if let hud = v as? ADActivitySpinner {
+            if let hud = v as? BRActivitySpinner {
                 hud.dismiss(completion: completion)
             }
         }

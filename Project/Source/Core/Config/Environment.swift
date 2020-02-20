@@ -80,8 +80,8 @@ class Environment {
     }
     
     class func resetAppState() {
-        ADApi.shared.store.signOut()
-        ADPersistentContainer.resetContainer()
+        BRApi.shared.store.signOut()
+        BRPersistentContainer.resetContainer()
         CoreDataContext.resetCoreDataContext()
     }    
 }

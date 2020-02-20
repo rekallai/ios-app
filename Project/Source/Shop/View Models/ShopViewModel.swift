@@ -35,7 +35,7 @@ class ShopViewModel: CoreDataViewModel {
         let fr: NSFetchRequest<Shop> = Shop.fetchRequest()
         fr.sortDescriptors = sortDescriptors
         let frc = NSFetchedResultsController(fetchRequest: fr,
-                                             managedObjectContext: ADPersistentContainer.shared.viewContext,
+                                             managedObjectContext: BRPersistentContainer.shared.viewContext,
                                              sectionNameKeyPath: nil,
                                              cacheName: nil)
         frc.delegate = self
@@ -73,7 +73,7 @@ class ShopViewModel: CoreDataViewModel {
             print("ERROR: Shop VM makeRequest: already loading data")
             return
         }
-        ADPersistentContainer.shared.save()
+        BRPersistentContainer.shared.save()
         loadingData = true
         request(venueRequest) { result in
             switch result {
@@ -83,7 +83,7 @@ class ShopViewModel: CoreDataViewModel {
                 DispatchQueue.main.async {
                     self.loadingData = false
 
-                    ADPersistentContainer.shared.save()
+                    BRPersistentContainer.shared.save()
 
                     if nrVenuesLoaded == self.dataItemsPerCall {
                         self.loadMore()
@@ -104,7 +104,7 @@ class ShopViewModel: CoreDataViewModel {
     
     func processApiResponse(response: Moya.Response) -> Int {
         do {
-            let workMoc = ADPersistentContainer.shared.childContext
+            let workMoc = BRPersistentContainer.shared.childContext
             
             if nextImportOrdinal == 0 {
 

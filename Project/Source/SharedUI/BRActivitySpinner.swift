@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ADActivitySpinner: UIView {
+class BRActivitySpinner: UIView {
 
     private class CircleView: UIView, CAAnimationDelegate {
                 
@@ -79,7 +79,7 @@ class ADActivitySpinner: UIView {
         func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
             
             guard flag else {
-                (superview?.superview as? ADActivitySpinner)?.animationInterrupted()
+                (superview?.superview as? BRActivitySpinner)?.animationInterrupted()
                 return
             }
             
@@ -127,7 +127,7 @@ class ADActivitySpinner: UIView {
                 logoColorView.frame.origin.x = self.bounds.size.width / 2.0
                 letterAView.frame.origin.x = (self.bounds.size.height / 2.0) - 2.0
             }) { [weak self] finished in
-                (self?.superview?.superview as? ADActivitySpinner)?.fullyFinished()
+                (self?.superview?.superview as? BRActivitySpinner)?.fullyFinished()
             }
         }
     }

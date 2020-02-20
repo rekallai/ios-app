@@ -13,9 +13,9 @@ class HomeViewController: UIViewController {
     @IBOutlet var tableView: UITableView?
     var profileButtonManager: ProfileButtonManager?
     
-    let restaurantsViewModel = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
-    let shopsViewModel = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
-    let attractionsViewModel = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
+    let restaurantsViewModel = ShopViewModel(api: BRApi.shared.api, store: BRApi.shared.store)
+    let shopsViewModel = ShopViewModel(api: BRApi.shared.api, store: BRApi.shared.store)
+    let attractionsViewModel = ShopViewModel(api: BRApi.shared.api, store: BRApi.shared.store)
 
     enum HomeSections: Int, CaseIterable {
         case shops

@@ -87,12 +87,12 @@ class RootViewController: UIViewController {
     }
     
     var lastVenueLoadFailed = false
-    private let venueVm = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
+    private let venueVm = ShopViewModel(api: BRApi.shared.api, store: BRApi.shared.store)
     func reloadVenues(onlyIfPreviouslyFailed: Bool) {
         venueVm.onUpdateSuccess = { [weak self] in
             self?.lastVenueLoadFailed = false
             CoreDataContext.shared.venuesUpdated()
-            ADPersistentContainer.shared.save()
+            BRPersistentContainer.shared.save()
         }
         
         venueVm.onUpdateFailure = { [weak self] errorStr in

@@ -9,9 +9,9 @@
 import UIKit
 import Moya
 
-class ADApi: NSObject {
+class BRApi: NSObject {
     
-    static let shared = ADApi()
+    static let shared = BRApi()
 
     private(set) lazy var api: APIProvider = {
         return APIProvider(

@@ -9,22 +9,22 @@
 import UIKit
 import CoreData
 
-class ADPersistentContainer: NSPersistentContainer {
+class BRPersistentContainer: NSPersistentContainer {
     
     override class func defaultDirectoryURL() -> URL {
         let baseUrl = super.defaultDirectoryURL()
         return baseUrl.appendingPathComponent("CoreData")
     }
 
-    static private(set) var shared: ADPersistentContainer = openContainer()
+    static private(set) var shared: BRPersistentContainer = openContainer()
     
-    private class func openContainer() -> ADPersistentContainer {
+    private class func openContainer() -> BRPersistentContainer {
         if Thread.isMainThread {
-            return ADPersistentContainer()
+            return BRPersistentContainer()
         } else {
-            var adpcOptional: ADPersistentContainer?
+            var adpcOptional: BRPersistentContainer?
             DispatchQueue.main.sync {
-                adpcOptional = ADPersistentContainer()
+                adpcOptional = BRPersistentContainer()
             }
             
             guard let adpc = adpcOptional else {
@@ -53,7 +53,7 @@ class ADPersistentContainer: NSPersistentContainer {
     private convenience init(){
         assert(Thread.isMainThread)
         
-        self.init(name: "ADModel")
+        self.init(name: "BRModel")
         loadPersistentStores { description, error in
             if let error = error {
                 print("ERROR: Failed to load persistent stores: \(error)")

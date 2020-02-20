@@ -20,7 +20,7 @@ public class CoreDataContext: NSManagedObject {
         let fr: NSFetchRequest<CoreDataContext> = CoreDataContext.fetchRequest()
         
         do {
-            let results = try ADPersistentContainer.shared.viewContext.fetch(fr)
+            let results = try BRPersistentContainer.shared.viewContext.fetch(fr)
             if results.count == 1 {
                 return results[0]
             }
@@ -28,7 +28,7 @@ public class CoreDataContext: NSManagedObject {
             print("CoreDataContext: shared: error: \(error)")
         }
         
-        return CoreDataContext(context: ADPersistentContainer.shared.viewContext)
+        return CoreDataContext(context: BRPersistentContainer.shared.viewContext)
     }
     
     class func resetCoreDataContext() {
