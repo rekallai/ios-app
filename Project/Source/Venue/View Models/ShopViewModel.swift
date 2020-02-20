@@ -1,5 +1,5 @@
 //
-//  VenueViewModel.swift
+//  ShopViewModel.swift
 //  Rekall
 //
 //  Created by Ray Hunter on 05/06/2019.
@@ -12,46 +12,11 @@ import UIKit
 import Moya
 import CoreData
 
-class VenueViewModel: CoreDataViewModel {
+class ShopViewModel: CoreDataViewModel {
     
     var onUpdateSuccess: (() -> Void)?
     var onUpdateFailure: ((String) -> Void)?
-    
-    //
-    // The type of venue this view model represents
-    //
-    enum VenueType: String {
-        case shopping
-        case restaurant
-        case hall
-        case attraction
-        case newAndNotable
-    }
-    
-    var category: String? {
-        didSet {
-            updateResultsControllerWith(predicate: createPredicate())
-        }
-    }
-    
-    var venueType: VenueType? {
-        didSet {
-            updateResultsControllerWith(predicate: createPredicate())
-        }
-    }
-    
-    var searchText: String? {
-        didSet {
-            updateResultsControllerWith(predicate: createPredicate())
-        }
-    }
-    
-    var venueIds: [String]? {
-        didSet {
-            updateResultsControllerWith(predicate: createPredicate())
-        }
-    }
-    
+        
     func updateResultsControllerWith(predicate: NSPredicate?){
         resultsController.fetchRequest.predicate = predicate
         
@@ -63,29 +28,12 @@ class VenueViewModel: CoreDataViewModel {
     }
     
     var sortDescriptors = [NSSortDescriptor(key: "importOrdinal", ascending: true)]
-    func createPredicate() -> NSPredicate? {
-        if let category = category {
-            return NSPredicate(format: "ANY categories.name LIKE[cd] %@", category)
-        }
-        if let venueType = venueType {
-            return NSPredicate(format: "venueType LIKE[cd] %@", venueType.rawValue)
-        }
-        if let searchText = searchText {
-            return NSPredicate(format: "name contains[cd] %@", searchText)
-        }
-        if let venueIds = venueIds {
-            return NSPredicate(format: "id IN %@", venueIds)
-        }
-        
-        return nil
-    }
     
     private var nextImportOrdinal: Int32 = 0
     
-    lazy private(set) var resultsController: NSFetchedResultsController<Venue> = {
-        let fr: NSFetchRequest<Venue> = Venue.fetchRequest()
+    lazy private(set) var resultsController: NSFetchedResultsController<Shop> = {
+        let fr: NSFetchRequest<Shop> = Shop.fetchRequest()
         fr.sortDescriptors = sortDescriptors
-        fr.predicate = createPredicate()
         let frc = NSFetchedResultsController(fetchRequest: fr,
                                              managedObjectContext: ADPersistentContainer.shared.viewContext,
                                              sectionNameKeyPath: nil,
@@ -102,26 +50,27 @@ class VenueViewModel: CoreDataViewModel {
     }()
     
     var loadingData = false
-    let venuesPerCall = 50
+    private let dataItemsPerCall = 50
+    
     func loadVenues() {
         if loadingData {
-            print("ERROR: Venue VM loadVenues: already loading data")
+            print("ERROR: Shop VM loadVenues: already loading data")
             return
         }
 
         nextImportOrdinal = 0
-        let venueRequest = VenueRequest(skip: Int(nextImportOrdinal), limit: venuesPerCall)
+        let venueRequest = ShopRequest(skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
         makeRequest(venueRequest)
     }
     
     private func loadMore() {
-        let venueRequest = VenueRequest(skip: Int(nextImportOrdinal), limit: venuesPerCall)
+        let venueRequest = ShopRequest(skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
         makeRequest(venueRequest)
     }
     
-    func makeRequest(_ venueRequest:VenueRequest) {
+    func makeRequest(_ venueRequest:ShopRequest) {
         if loadingData {
-            print("ERROR: Venue VM makeRequest: already loading data")
+            print("ERROR: Shop VM makeRequest: already loading data")
             return
         }
         ADPersistentContainer.shared.save()
@@ -136,7 +85,7 @@ class VenueViewModel: CoreDataViewModel {
 
                     ADPersistentContainer.shared.save()
 
-                    if nrVenuesLoaded == self.venuesPerCall {
+                    if nrVenuesLoaded == self.dataItemsPerCall {
                         self.loadMore()
                     } else {
                         self.onUpdateSuccess?()
@@ -162,16 +111,16 @@ class VenueViewModel: CoreDataViewModel {
                 //
                 // Delete all venues
                 //
-                let fr: NSFetchRequest<NSFetchRequestResult> = Venue.fetchRequest()
+                let fr: NSFetchRequest<NSFetchRequestResult> = Shop.fetchRequest()
                 fr.includesPropertyValues = false
-                if let existingVenues = try workMoc.fetch(fr) as? [Venue] {
+                if let existingVenues = try workMoc.fetch(fr) as? [Shop] {
                     for v in existingVenues {
                         workMoc.delete(v)
                     }
                 }
             }
                               
-            let result = try decodeResponse(VenueSearchResponse.self, response: response, moc: workMoc)
+            let result = try decodeResponse(ShopSearchResponse.self, response: response, moc: workMoc)
             for venue in result.data {
                 venue.importOrdinal = nextImportOrdinal
                 nextImportOrdinal += 1                
@@ -185,19 +134,13 @@ class VenueViewModel: CoreDataViewModel {
         }
     }
     
-    func venue(at index: Int) -> Venue? {
+    func shop(at index: Int) -> Shop? {
         let indexPath = IndexPath(item: index, section: 0)
         return resultsController.object(at: indexPath)
     }
-}
-
-extension VenueViewModel: DataItemProvider {
+    
     var numberOfItems: Int {
         return resultsController.fetchedObjects?.count ?? 0
-    }
-    
-    func item(at index: Int) -> DataItem? {
-        return venue(at: index)
     }
 }
 

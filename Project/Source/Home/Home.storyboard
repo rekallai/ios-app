@@ -4,21 +4,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Semibold.otf">
-            <string>SFProDisplay-Semibold</string>
-        </array>
-        <array key="SF-Pro-Text-Regular.otf">
-            <string>SFProText-Regular</string>
-        </array>
-        <array key="SF-Pro-Text-Semibold.otf">
-            <string>SFProText-Semibold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--For You-->
         <scene sceneID="pjM-xi-wnT">
@@ -33,91 +21,6 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TicketsHeader" rowHeight="65" id="REX-VQ-rl0" customClass="TicketsHeaderCell" customModule="Project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="REX-VQ-rl0" id="TPE-g7-QGM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGN-OG-xFt">
-                                                    <rect key="frame" x="16" y="41" width="54.5" height="20"/>
-                                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See All (4)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNd-KB-Dvr">
-                                                    <rect key="frame" x="282" y="41" width="76" height="20"/>
-                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                                    <color key="textColor" name="HighlightButtonText"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="pNd-KB-Dvr" secondAttribute="bottom" constant="4" id="DRq-UB-Pk9"/>
-                                                <constraint firstItem="SGN-OG-xFt" firstAttribute="leading" secondItem="TPE-g7-QGM" secondAttribute="leading" constant="16" id="Qvs-7B-yPX"/>
-                                                <constraint firstAttribute="bottom" secondItem="SGN-OG-xFt" secondAttribute="bottom" constant="4" id="gip-kU-0iL"/>
-                                                <constraint firstAttribute="trailing" secondItem="pNd-KB-Dvr" secondAttribute="trailing" constant="17" id="tso-sz-pJa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outlet property="seeAllLabel" destination="pNd-KB-Dvr" id="buT-1R-l61"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personalizeCell" rowHeight="174" id="hO4-jc-KOv" customClass="HomePersonalizeCell" customModule="Project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="93" width="375" height="174"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hO4-jc-KOv" id="zeB-lW-6VO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="174"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Follow your favorite topics to improve your experience at ProjectName." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KhH-Cb-TPb">
-                                                    <rect key="frame" x="20" y="48" width="345" height="41"/>
-                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Help us get to know you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2g-ea-iJT">
-                                                    <rect key="frame" x="20" y="21" width="217.5" height="24"/>
-                                                    <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mj0-Sk-n9E">
-                                                    <rect key="frame" x="16" y="107" width="343" height="44"/>
-                                                    <color key="backgroundColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="j4K-B2-ha9"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="17"/>
-                                                    <state key="normal" title="Personalize">
-                                                        <color key="titleColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="personalizeButtonTapped:" destination="rLc-ib-oaG" eventType="touchUpInside" id="UI2-02-NKU"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="KhH-Cb-TPb" firstAttribute="top" secondItem="r2g-ea-iJT" secondAttribute="bottom" constant="3" id="90H-Au-28L"/>
-                                                <constraint firstAttribute="bottom" secondItem="mj0-Sk-n9E" secondAttribute="bottom" constant="23" id="Nxw-aE-Ml5"/>
-                                                <constraint firstItem="mj0-Sk-n9E" firstAttribute="top" secondItem="KhH-Cb-TPb" secondAttribute="bottom" constant="18" id="RU8-4Y-0rv"/>
-                                                <constraint firstAttribute="trailing" secondItem="mj0-Sk-n9E" secondAttribute="trailing" constant="16" id="Yif-3u-ILT"/>
-                                                <constraint firstItem="mj0-Sk-n9E" firstAttribute="leading" secondItem="zeB-lW-6VO" secondAttribute="leading" constant="16" id="eH4-ic-cwE"/>
-                                                <constraint firstItem="r2g-ea-iJT" firstAttribute="leading" secondItem="zeB-lW-6VO" secondAttribute="leading" constant="20" id="hqW-uj-5wV"/>
-                                                <constraint firstItem="r2g-ea-iJT" firstAttribute="top" secondItem="zeB-lW-6VO" secondAttribute="top" constant="21" id="lv4-yk-Egc"/>
-                                                <constraint firstAttribute="trailing" secondItem="KhH-Cb-TPb" secondAttribute="trailing" constant="10" id="yBu-kC-7Nq"/>
-                                                <constraint firstItem="KhH-Cb-TPb" firstAttribute="leading" secondItem="zeB-lW-6VO" secondAttribute="leading" constant="20" id="yso-Ev-7GT"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="introText" destination="KhH-Cb-TPb" id="u0j-18-5Eg"/>
-                                            <outlet property="personalizeButton" destination="mj0-Sk-n9E" id="KZm-J6-XNT"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="rLc-ib-oaG" id="nFh-il-lld"/>
                                     <outlet property="delegate" destination="rLc-ib-oaG" id="v24-Bb-JkE"/>
@@ -145,8 +48,5 @@
     </scenes>
     <resources>
         <image name="TabForYou" width="21" height="21"/>
-        <namedColor name="HighlightButtonText">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

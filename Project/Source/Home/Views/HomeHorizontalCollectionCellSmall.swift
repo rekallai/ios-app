@@ -17,7 +17,7 @@ class HomeHorizontalCollectionCellSmall: UITableViewCell {
     
     weak var delegate: HomeHorizontalCollectionDelegate?
     
-    var viewModel: DataItemProvider? {
+    var viewModel: ShopViewModel? {
         willSet {
             viewModel?.delegate = nil
         }
@@ -65,7 +65,7 @@ extension HomeHorizontalCollectionCellSmall: UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let dataItem = viewModel?.item(at: indexPath.item)
+        let dataItem = viewModel?.shop(at: indexPath.item)
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHorizontalCellSmall.identifier,
                                                             for: indexPath) as? HomeHorizontalCellSmall else {
@@ -77,7 +77,7 @@ extension HomeHorizontalCollectionCellSmall: UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let dataItem = viewModel?.item(at: indexPath.item) else { return }
+        guard let dataItem = viewModel?.shop(at: indexPath.item) else { return }
         delegate?.userTapped(dataItem: dataItem, sender: self)
     }
 }

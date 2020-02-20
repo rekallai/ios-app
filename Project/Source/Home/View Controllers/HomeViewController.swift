@@ -13,9 +13,9 @@ class HomeViewController: UIViewController {
     @IBOutlet var tableView: UITableView?
     var profileButtonManager:ProfileButtonManager?
     
-    let restaurantsViewModel = VenueViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
-    let shopsViewModel = VenueViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
-    let attractionsViewModel = VenueViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
+    let restaurantsViewModel = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
+    let shopsViewModel = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
+    let attractionsViewModel = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
 
     enum HomeSections: Int, CaseIterable {
         case attractions
@@ -30,19 +30,8 @@ class HomeViewController: UIViewController {
                             forCellReuseIdentifier: HomeHorizontalCollectionCellLarge.identifier)
         tableView?.register(HomeHorizontalCollectionCellSmall.nib,
                             forCellReuseIdentifier: HomeHorizontalCollectionCellSmall.identifier)
-        setUpViewModels()
     }
-    
-    func setUpViewModels() {
-        restaurantsViewModel.venueType = .restaurant
-
-        shopsViewModel.venueType = .shopping
-        
-        attractionsViewModel.venueType = .attraction
-        attractionsViewModel.sortDescriptors = [NSSortDescriptor(key: "comingSoon", ascending: true),
-        NSSortDescriptor(key: "importOrdinal", ascending: true)]
-    }
-            
+                
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         profileButtonManager?.shouldDisplay(true)
@@ -122,7 +111,7 @@ extension HomeViewController: HomeHorizontalCollectionDelegate {
         return cell
     }
     
-    func userTapped(dataItem: DataItem, sender: UITableViewCell) {
+    func userTapped(dataItem: Shop, sender: UITableViewCell) {
     }
 }
 

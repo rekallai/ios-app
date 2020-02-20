@@ -87,7 +87,7 @@ class RootViewController: UIViewController {
     }
     
     var lastVenueLoadFailed = false
-    private let venueVm = VenueViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
+    private let venueVm = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
     func reloadVenues(onlyIfPreviouslyFailed: Bool) {
         venueVm.onUpdateSuccess = { [weak self] in
             self?.lastVenueLoadFailed = false

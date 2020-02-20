@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeHorizontalCollectionDelegate: class {
-    func userTapped(dataItem: DataItem, sender: UITableViewCell)
+    func userTapped(dataItem: Shop, sender: UITableViewCell)
 }
 
 class HomeHorizontalCollectionCellLarge: UITableViewCell {
@@ -21,7 +21,7 @@ class HomeHorizontalCollectionCellLarge: UITableViewCell {
     
     weak var delegate: HomeHorizontalCollectionDelegate?
     
-    var viewModel: DataItemProvider? {
+    var viewModel: ShopViewModel? {
         willSet {
             viewModel?.delegate = nil
         }
@@ -104,7 +104,7 @@ extension HomeHorizontalCollectionCellLarge: UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let dataItem = viewModel?.item(at: indexPath.item)
+        let dataItem = viewModel?.shop(at: indexPath.item)
         
         if layoutStyle == .allBigItems || (indexPath.item % 3) == 2 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHorizontalCellLarge.identifier,
@@ -126,7 +126,7 @@ extension HomeHorizontalCollectionCellLarge: UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let dataItem = viewModel?.item(at: indexPath.item) else { return }
+        guard let dataItem = viewModel?.shop(at: indexPath.item) else { return }
         delegate?.userTapped(dataItem: dataItem, sender: self)
     }
     

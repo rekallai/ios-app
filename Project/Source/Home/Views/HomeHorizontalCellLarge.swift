@@ -21,7 +21,7 @@ class HomeHorizontalCellLarge: UICollectionViewCell {
     }
     
     weak var delegate: HomeHorizontalCellLargeDelegate?
-    var dataItem: DataItem? {
+    var dataItem: Shop? {
         didSet {
             titleLabel.text = dataItem?.name
             subtitleLabel.text = dataItem?.itemShortDescription

@@ -12,9 +12,9 @@ import XCTest
 class APIVenueTests: ADTestCase {
 
     func testEListVenues() {
-        let venueVM = VenueViewModel(api: api, store: store)
+        let venueVM = ShopViewModel(api: api, store: store)
         
-        let venueExpectation = expectation(description: "Venue API")
+        let venueExpectation = expectation(description: "Shop API")
         venueVM.onUpdateSuccess = {
             venueExpectation.fulfill()
         }

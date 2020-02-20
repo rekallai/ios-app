@@ -16,7 +16,7 @@ class HomeHorizontalCellSmall: UICollectionViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    var dataItem: DataItem? {
+    var dataItem: Shop? {
         didSet {
             titleLabel.text = dataItem?.name
             subtitleLabel.text = dataItem?.itemShortDescription

@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-class VenueRequest : ADBaseRequest {
+class ShopRequest : ADBaseRequest {
     struct Params:Codable {
         let date: String
         let numDays: Int
@@ -25,7 +25,7 @@ class VenueRequest : ADBaseRequest {
     }
     
     override var path: String {
-        return "/1/venues/search"
+        return "/1/shops/search"
     }
     override var method: Moya.Method { return .post }
     override var task: Task { return .requestJSONEncodable(
@@ -33,8 +33,8 @@ class VenueRequest : ADBaseRequest {
     )}
 }
 
-class VenueSearchResponse: ADApiResponse {
-    let data: [Venue]
+class ShopSearchResponse: ADApiResponse {
+    let data: [Shop]
     let meta: SearchMeta
     
     // Subclass of first decodable must provide own decoding init
@@ -45,7 +45,7 @@ class VenueSearchResponse: ADApiResponse {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        data = try container.decode([Venue].self, forKey: .data)
+        data = try container.decode([Shop].self, forKey: .data)
         meta = try container.decode(SearchMeta.self, forKey: .meta)
         try super.init(from: container.superDecoder())
     }

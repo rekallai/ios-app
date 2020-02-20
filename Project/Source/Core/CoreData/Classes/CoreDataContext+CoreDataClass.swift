@@ -36,11 +36,11 @@ public class CoreDataContext: NSManagedObject {
     }
     
     func venuesUpdated() {
-        self.lastVenueUpdate = Date()
+        self.lastDataUpdate = Date()
     }
     
     func venuesNeedUpdated() -> Bool {
-        guard let lastUpdate = lastVenueUpdate else {
+        guard let lastUpdate = lastDataUpdate else {
             return true
         }
         
