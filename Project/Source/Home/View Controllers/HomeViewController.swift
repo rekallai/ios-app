@@ -11,7 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView?
-    var profileButtonManager:ProfileButtonManager?
+    var profileButtonManager: ProfileButtonManager?
     
     let restaurantsViewModel = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
     let shopsViewModel = ShopViewModel(api: ADApi.shared.api, store: ADApi.shared.store)
@@ -25,6 +25,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let navBar = navigationController?.navigationBar {
+            profileButtonManager = ProfileButtonManager(navBar: navBar)
+            profileButtonManager?.delegate = self
+        }
+        
         tableView?.separatorStyle = .none
         tableView?.register(HomeHorizontalCollectionCellLarge.nib,
                             forCellReuseIdentifier: HomeHorizontalCollectionCellLarge.identifier)
@@ -112,6 +118,17 @@ extension HomeViewController: HomeHorizontalCollectionDelegate {
     }
     
     func userTapped(dataItem: Shop, sender: UITableViewCell) {
+    }
+}
+
+
+extension HomeViewController: ProfileButtonDelegate {
+    
+    func profileButtonTapped() {
+        if let vc = UIStoryboard.preAuth(), let preAuthVC = vc.viewControllers.first as? PreAuthViewController {
+            preAuthVC.signUpFlow = false
+            present(vc, animated: true, completion:nil)
+        }
     }
 }
 

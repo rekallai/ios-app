@@ -27,13 +27,6 @@ class Environment {
     let productionDomain = "americandream.com"
     
     #warning("Also configure the following")
-    let appleMerchantId = "<apple merchant ID>"
-    let applePasskitTypeIdentifier = "<apple passkit ID>"
-    let jibeStreamHost = "https://api.jibestream.com"
-    let jibeStreamClientId = "<jibestream client ID>"
-    let jibeStreamClientSecret = "<jibestream client secret>"
-    let jibeStringCustomerId: Int32 = 0
-    let jibeStreamVenueId: Int32 = 0
     let projectName = "Rekall ios-app"
     let termsUrl = "https://rekall.ai/terms"
     let privacyUrl = "https://rekall.ai/privacy"
@@ -55,8 +48,8 @@ class Environment {
             currentPlatform = storedEnv
             configureForPlatform(platform: storedEnv)
         } else {
-            currentPlatform = .production
-            configureForPlatform(platform: .production)
+            currentPlatform = .build
+            configureForPlatform(platform: .build)
         }
     }
     
@@ -72,7 +65,7 @@ class Environment {
                         return "0.0.0.0"
                     }
                 }()
-                apiBaseUrl = "http://" + targetIp + ":2300"
+                apiBaseUrl = "http://" + targetIp + ":2305"
                 shareBaseUrl = "http://" + targetIp + ":2200"
                 imageResizeProxyUrl = "http://" + targetIp + ":8085/img"
             case .staging:

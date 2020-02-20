@@ -42,8 +42,8 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
     }
     
     func signInTapped() {
-        guard let userPassword = viewModel.password,
-              userPassword.count >= 6 else {
+        let userPassword = viewModel.password
+        guard userPassword.count >= 6 else {
                 showError(error: NSLocalizedString("Please enter a password at least 6 characters long.",
                                                    comment: "Error message"))
                 return

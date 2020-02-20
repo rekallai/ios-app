@@ -14,15 +14,13 @@ class AuthViewModel: ViewModel {
     var firstName: String = ""
     var lastName: String = ""
     var email: String = ""
-    var password: String?
-    var paymentMethodId: String?
+    var password: String = ""
     
-    func performRegistrationForPayment(firstName: String, lastName: String, email: String, password: String?, paymentMethodId: String?){
+    func performRegistrationForPayment(firstName: String, lastName: String, email: String, password: String, paymentMethodId: String?){
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.password = password
-        self.paymentMethodId = paymentMethodId
         
         submitRegister()
     }
@@ -33,8 +31,6 @@ class AuthViewModel: ViewModel {
         regRequest.lastName = lastName
         regRequest.email = email
         regRequest.password = password
-        regRequest.paymentMethodId = paymentMethodId
-        regRequest.optIns = OptIns(termsAccepted: Defaults.hasAcceptedTerms())
         
         request(regRequest) { result in
             switch result {

@@ -43,29 +43,21 @@ class AuthRequestRegister : ADBaseRequest {
     var email = ""
     var firstName = ""
     var lastName = ""
-    var password: String?           //  Server needs either a password or a stripe
-    var paymentMethodId: String?    //  payment method ID to create an account
-    var optIns: OptIns?
+    var password = ""
     
     override var path: String { return "/1/auth/register" }
     override var method: Moya.Method { return .post }
     override var authorizationType: AuthorizationType { return .none }
     override var task: Task {
         return .requestJSONEncodable(AuthRegister(email: email,
-                                                  firstName: firstName,
-                                                  lastName: lastName,
-                                                  password: password,
-                                                  paymentMethodId: paymentMethodId,
-                                                  optIns: optIns))
+                                                  name: "\(firstName) \(lastName)",
+                                                  password: password))
     }
     
     private struct AuthRegister: Codable {
         let email: String
-        let firstName: String
-        let lastName: String
-        let password: String?
-        let paymentMethodId: String?
-        let optIns: OptIns?
+        let name: String
+        let password: String
     }
 }
 

@@ -11,8 +11,6 @@ import Moya
 
 class ShopRequest : ADBaseRequest {
     struct Params:Codable {
-        let date: String
-        let numDays: Int
         let skip: Int
         let limit: Int
     }
@@ -28,8 +26,9 @@ class ShopRequest : ADBaseRequest {
         return "/1/shops/search"
     }
     override var method: Moya.Method { return .post }
+    override var authorizationType: AuthorizationType { return .bearer }
     override var task: Task { return .requestJSONEncodable(
-        Params(date:Date.todayYearMonthDay(), numDays: 7, skip: skip, limit: limit)
+        Params(skip: skip, limit: limit)
     )}
 }
 
