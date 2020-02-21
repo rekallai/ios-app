@@ -23,8 +23,8 @@ class Environment {
     var imageResizeProxyUrl = ""
     
     //#error("Please configure staging and production hostnames")
-    let stagingDomain = "americandream.dev"
-    let productionDomain = "americandream.com"
+    let stagingDomain = "yoursite.dev"
+    let productionDomain = "yoursite.com"
     
     #warning("Also configure the following")
     let projectName = "Rekall ios-app"

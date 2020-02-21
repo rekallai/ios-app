@@ -8,7 +8,6 @@
 
 import XCTest
 import Moya
-@testable import Project
 
 class ADTestCase: XCTestCase {
 

@@ -50,40 +50,40 @@ class ShopViewModel: CoreDataViewModel {
     var loadingData = false
     private let dataItemsPerCall = 50
     
-    func loadVenues() {
+    func loadShops() {
         if loadingData {
-            print("ERROR: Shop VM loadVenues: already loading data")
+            print("ERROR: Shop VM loadShops: already loading data")
             return
         }
 
         nextImportOrdinal = 0
-        let venueRequest = ShopRequest(skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
-        makeRequest(venueRequest)
+        let shopRequest = ShopRequest(skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
+        makeRequest(shopRequest)
     }
     
     private func loadMore() {
-        let venueRequest = ShopRequest(skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
-        makeRequest(venueRequest)
+        let shopRequest = ShopRequest(skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
+        makeRequest(shopRequest)
     }
     
-    func makeRequest(_ venueRequest:ShopRequest) {
+    func makeRequest(_ shopRequest:ShopRequest) {
         if loadingData {
             print("ERROR: Shop VM makeRequest: already loading data")
             return
         }
         BRPersistentContainer.shared.save()
         loadingData = true
-        request(venueRequest) { result in
+        request(shopRequest) { result in
             switch result {
             case .success(let results):
-                let nrVenuesLoaded = self.processApiResponse(response: results)
+                let nrShopsLoaded = self.processApiResponse(response: results)
                 
                 DispatchQueue.main.async {
                     self.loadingData = false
 
                     BRPersistentContainer.shared.save()
 
-                    if nrVenuesLoaded == self.dataItemsPerCall {
+                    if nrShopsLoaded == self.dataItemsPerCall {
                         self.loadMore()
                     } else {
                         self.onUpdateSuccess?()
@@ -107,20 +107,20 @@ class ShopViewModel: CoreDataViewModel {
             if nextImportOrdinal == 0 {
 
                 //
-                // Delete all venues
+                // Delete all shops
                 //
                 let fr: NSFetchRequest<NSFetchRequestResult> = Shop.fetchRequest()
                 fr.includesPropertyValues = false
-                if let existingVenues = try workMoc.fetch(fr) as? [Shop] {
-                    for v in existingVenues {
+                if let existingShops = try workMoc.fetch(fr) as? [Shop] {
+                    for v in existingShops {
                         workMoc.delete(v)
                     }
                 }
             }
                               
             let result = try decodeResponse(ShopSearchResponse.self, response: response, moc: workMoc)
-            for venue in result.data {
-                venue.importOrdinal = nextImportOrdinal
+            for shop in result.data {
+                shop.importOrdinal = nextImportOrdinal
                 nextImportOrdinal += 1                
             }
             

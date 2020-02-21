@@ -83,31 +83,31 @@ class RootViewController: UIViewController {
     }
     
     func reloadData(onlyIfPreviouslyFailed: Bool) {
-        reloadVenues(onlyIfPreviouslyFailed: onlyIfPreviouslyFailed)
+        reloadShops(onlyIfPreviouslyFailed: onlyIfPreviouslyFailed)
     }
     
-    var lastVenueLoadFailed = false
-    private let venueVm = ShopViewModel(api: BRApi.shared.api, store: BRApi.shared.store)
-    func reloadVenues(onlyIfPreviouslyFailed: Bool) {
-        venueVm.onUpdateSuccess = { [weak self] in
-            self?.lastVenueLoadFailed = false
+    var lastShopLoadFailed = false
+    private let shopVm = ShopViewModel(api: BRApi.shared.api, store: BRApi.shared.store)
+    func reloadShops(onlyIfPreviouslyFailed: Bool) {
+        shopVm.onUpdateSuccess = { [weak self] in
+            self?.lastShopLoadFailed = false
             CoreDataContext.shared.shopsUpdated()
             BRPersistentContainer.shared.save()
         }
         
-        venueVm.onUpdateFailure = { [weak self] errorStr in
-            self?.lastVenueLoadFailed = true
+        shopVm.onUpdateFailure = { [weak self] errorStr in
+            self?.lastShopLoadFailed = true
         }
         
         guard onlyIfPreviouslyFailed else {
             if CoreDataContext.shared.shopsNeedUpdated() {
-                venueVm.loadVenues()
+                shopVm.loadShops()
             }
             return
         }
         
-        if lastVenueLoadFailed {
-            venueVm.loadVenues()
+        if lastShopLoadFailed {
+            shopVm.loadShops()
         }
     }
 }
