@@ -18,7 +18,7 @@ struct APIRequest {
 }
 
 class ADBaseRequest: TargetType, AccessTokenAuthorizable {
-    var baseURL: URL { return URL(string: Environment.shared.apiBaseUrl)! }
+    var baseURL: URL { return URL(string: AppEnvironment.shared.apiBaseUrl)! }
     var sampleData: Data { return Data() }
     var headers: [String : String]? { return nil }
 

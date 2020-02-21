@@ -15,7 +15,7 @@ class EnvironmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        switch Environment.shared.currentPlatform {
+        switch AppEnvironment.shared.currentPlatform {
         case .build:
             segmentedControl.selectedSegmentIndex = 0
         case .staging:
@@ -29,11 +29,11 @@ class EnvironmentViewController: UIViewController {
     @IBAction func applyTapped(_ sender: UIButton) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            Environment.shared.currentPlatform = .build
+            AppEnvironment.shared.currentPlatform = .build
         case 1:
-            Environment.shared.currentPlatform = .staging
+            AppEnvironment.shared.currentPlatform = .staging
         case 2:
-            Environment.shared.currentPlatform = .production
+            AppEnvironment.shared.currentPlatform = .production
         default:
             break
         }

@@ -108,7 +108,7 @@ class AuthRootViewController: UIViewController, UITextFieldDelegate {
     }
         
     @IBAction func forgotPasswordTapped(_ sender: UIButton) {
-        let url = URL(string: Environment.shared.shareBaseUrl + "/forgot-password")!
+        let url = URL(string: AppEnvironment.shared.shareBaseUrl + "/forgot-password")!
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

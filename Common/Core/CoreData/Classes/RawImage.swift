@@ -33,7 +33,7 @@ class RawImage: NSObject, Decodable {
     let updatedAt: Date
     
     var imageUrl: URL? {
-        let urlStr = "\(Environment.shared.apiBaseUrl)/1/uploads/\(imageHash)/image"
+        let urlStr = "\(AppEnvironment.shared.apiBaseUrl)/1/uploads/\(imageHash)/image"
         return URL(string: urlStr)
     }
 }

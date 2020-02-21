@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Environment {
+class AppEnvironment {
 
-    static let shared = Environment()
+    static let shared = AppEnvironment()
     
     enum Platform: String {
         case build
@@ -21,7 +21,7 @@ class Environment {
     var apiBaseUrl = ""
     var shareBaseUrl = ""
     
-    #error("Please configure staging and production hostnames")
+    //#error("Please configure staging and production hostnames")
     let stagingDomain = "yoursite.dev"
     let productionDomain = "yoursite.com"
     
