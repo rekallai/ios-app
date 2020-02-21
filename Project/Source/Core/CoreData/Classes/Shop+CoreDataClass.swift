@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreData
-import CoreLocation
 
 @objc
 public class Shop: NSManagedObject, Decodable, CDUpdatable {

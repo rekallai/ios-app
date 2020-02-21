@@ -51,7 +51,7 @@ class ProductsViewModel: CoreDataViewModel {
     var loadingData = false
     private let dataItemsPerCall = 50
     
-    func loadVenues() {
+    func loadProducts() {
         if loadingData {
             print("ERROR: Product VM loadVenues: already loading data")
             return

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b2Z-Et-A1H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rLc-ib-oaG">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,26 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="L0w-nW-fb6">
-            <objects>
-                <navigationController id="b2Z-Et-A1H" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mbF-uu-Zch">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="rLc-ib-oaG" kind="relationship" relationship="rootViewController" id="6bZ-so-6qs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ccd-q4-uhP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-902" y="-993"/>
-        </scene>
-        <!--Shops-->
+        <!--Shop-->
         <scene sceneID="pjM-xi-wnT">
             <objects>
-                <viewController id="rLc-ib-oaG" customClass="HomeViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rLc-ib-oaG" userLabel="Shop" customClass="ShopViewController" customModule="Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uf9-Pd-gIf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,22 +39,11 @@
                     <navigationItem key="navigationItem" title="Shops" id="o9L-Ba-pPd" userLabel="Shops"/>
                     <connections>
                         <outlet property="tableView" destination="hUs-9h-TPv" id="32N-yO-o9t"/>
-                        <segue destination="bhf-ms-q49" kind="show" identifier="ShowShop" id="OeK-2K-7Pj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bru-TB-M6g" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="500.00000000000006" y="-992.41071428571422"/>
-        </scene>
-        <!--Shop-->
-        <scene sceneID="0lb-Wc-F4H">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Shop" id="bhf-ms-q49" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="WSt-e2-9lU"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TlZ-zL-b8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1473" y="-993"/>
         </scene>
     </scenes>
     <resources>

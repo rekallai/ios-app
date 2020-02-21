@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-
+@objc
 public class Product: NSManagedObject, Decodable {
     enum CodingKeys: String, CodingKey {
         case id
@@ -26,7 +26,7 @@ public class Product: NSManagedObject, Decodable {
     
     public required init(from decoder: Decoder) throws {
         guard let moc = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext,
-              let entity = NSEntityDescription.entity(forEntityName: "Shop", in: moc) else {
+              let entity = NSEntityDescription.entity(forEntityName: "Product", in: moc) else {
             fatalError("MOC not set in decoder")
         }
         
@@ -45,7 +45,7 @@ public class Product: NSManagedObject, Decodable {
         itemDescription = try container.decodeIfPresent(String.self, forKey: .itemDescription)
     }
     
-    func equivalentObjectComparator() -> ((Shop) -> Bool) {
+    func equivalentObjectComparator() -> ((Product) -> Bool) {
         return { [id] other in
             return other.id == id
         }

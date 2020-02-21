@@ -67,7 +67,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch section {
         case .shops:
             let cell = largeCollectionScroller(in: tableView, for: indexPath)
-            cell.titleLabel.text = NSLocalizedString("Shopping", comment: "Section title")
+            cell.titleLabel.text = NSLocalizedString("Shops", comment: "Section title")
             cell.viewModel = shopsViewModel
             cell.separatorView.isHidden = false
             return cell
@@ -90,6 +90,13 @@ extension HomeViewController: HomeHorizontalCollectionDelegate {
     
     func userTapped(dataItem: Shop, sender: UITableViewCell) {
         print("User tapped shop")
+        performSegue(withIdentifier: "ShowShop", sender: dataItem)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? ShopViewController, let shop = sender as? Shop {
+            dest.shop = shop
+        }
     }
 }
 

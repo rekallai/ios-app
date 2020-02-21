@@ -30,7 +30,7 @@ class ProductHorizontalCellSmall: UICollectionViewCell {
     
     @IBOutlet var venueImageView: UIImageView!
     @IBOutlet var headerLabel: UILabel!
-    @IBOutlet var distanceAndTimeLabel: UILabel!
+    @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
     
