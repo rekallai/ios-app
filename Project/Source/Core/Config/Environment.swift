@@ -20,17 +20,15 @@ class Environment {
     
     var apiBaseUrl = ""
     var shareBaseUrl = ""
-    var imageResizeProxyUrl = ""
     
-    //#error("Please configure staging and production hostnames")
+    #error("Please configure staging and production hostnames")
     let stagingDomain = "yoursite.dev"
     let productionDomain = "yoursite.com"
     
     #warning("Also configure the following")
-    let projectName = "Rekall ios-app"
-    let termsUrl = "https://rekall.ai/terms"
-    let privacyUrl = "https://rekall.ai/privacy"
-    let segmentWriteKey = "<segment write key>"
+    let projectName = "Bedrock ios-app"
+    let termsUrl = "https://bedrock.io/terms"
+    let privacyUrl = "https://bedrock.io/privacy"
 
     private let currentEnvironmentKey = "CurrentEnvironment"
     
@@ -48,8 +46,8 @@ class Environment {
             currentPlatform = storedEnv
             configureForPlatform(platform: storedEnv)
         } else {
-            currentPlatform = .build
-            configureForPlatform(platform: .build)
+            currentPlatform = .production
+            configureForPlatform(platform: currentPlatform)
         }
     }
     
@@ -65,17 +63,14 @@ class Environment {
                         return "0.0.0.0"
                     }
                 }()
-                apiBaseUrl = "http://" + targetIp + ":2305"
+                apiBaseUrl = "http://" + targetIp + ":2300"
                 shareBaseUrl = "http://" + targetIp + ":2200"
-                imageResizeProxyUrl = "http://" + targetIp + ":8085/img"
             case .staging:
                 apiBaseUrl = "https://api.\(stagingDomain)"
                 shareBaseUrl = "https://www.\(stagingDomain)"
-                imageResizeProxyUrl = "https://images.\(stagingDomain)/img"
             case .production:
                 apiBaseUrl = "https://api.\(productionDomain)"
                 shareBaseUrl = "https://www.\(productionDomain)"
-                imageResizeProxyUrl = "https://images.\(productionDomain)/img"
         }
     }
     

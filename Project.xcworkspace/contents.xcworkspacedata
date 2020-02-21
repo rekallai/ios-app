@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/ray/projects/client/rekall/ios-app/Project/Source/Core/CoreData/Classes/Product+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
       location = "group:Project.xcodeproj">
    </FileRef>
    <FileRef
