@@ -719,7 +719,6 @@
 				F02F45A64908B93B6E2B9747 /* [CP] Embed Pods Frameworks */,
 				714660CD22C129F6006E3ADE /* ShellScript */,
 				71CB7681239182B8002EF8E7 /* ShellScript */,
-				99926431FBAC6EC4BB501FC0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -758,7 +757,6 @@
 				718CDE0322A6793A00C07C0E /* Frameworks */,
 				718CDE0422A6793A00C07C0E /* Resources */,
 				18F0BC4416ABD51B287FF6B2 /* [CP] Embed Pods Frameworks */,
-				4EF48EC3A64C1D14A66C5F15 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -909,23 +907,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project-ProjectUITests/Pods-Project-ProjectUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4EF48EC3A64C1D14A66C5F15 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Project-ProjectUITests/Pods-Project-ProjectUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Project-ProjectUITests/Pods-Project-ProjectUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project-ProjectUITests/Pods-Project-ProjectUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		714660CD22C129F6006E3ADE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -961,23 +942,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "plutil -replace BUILD_SERVER_IP -string `ipconfig getifaddr en0` \"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n\n";
-		};
-		99926431FBAC6EC4BB501FC0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Project/Pods-Project-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Project/Pods-Project-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project/Pods-Project-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		A9F3171934532764B9F56B75 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

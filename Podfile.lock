@@ -3,12 +3,6 @@ PODS:
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
   - Analytics (3.7.0)
-  - Contentful (4.2.4):
-    - Contentful/ImageOptions (= 4.2.4)
-  - Contentful/ImageOptions (4.2.4)
-  - ContentfulRichTextRenderer (0.0.1):
-    - AlamofireImage (~> 3.4)
-    - Contentful (~> 4.1)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Fabric (1.10.2)
@@ -75,9 +69,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.5.1):
     - GoogleUtilities/Logger
-  - Intercom (6.0.1)
   - JGProgressHUD (2.1)
-  - JMapiOSSDK (5.5.0)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -90,31 +82,22 @@ PODS:
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
   - Result (4.1.0)
-  - Stripe (18.4.0)
-  - UIKit-iOS-Pod (1.1.1)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - Analytics
-  - ContentfulRichTextRenderer
   - Crashlytics
   - Fabric
   - Firebase/Core
-  - Intercom
   - JGProgressHUD
-  - JMapiOSSDK (from `https://github.com/Jibestream/JMap-iOS-SDK-Pod.git`)
   - Moya
-  - Stripe
-  - UIKit-iOS-Pod (from `https://github.com/Jibestream/UIKit-iOS-Pod.git`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
     - Analytics
-    - Contentful
-    - ContentfulRichTextRenderer
     - Crashlytics
     - Fabric
     - Firebase
@@ -128,34 +111,16 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
-    - Intercom
     - JGProgressHUD
     - Moya
     - nanopb
     - PromisesObjC
     - Result
-    - Stripe
-
-EXTERNAL SOURCES:
-  JMapiOSSDK:
-    :git: https://github.com/Jibestream/JMap-iOS-SDK-Pod.git
-  UIKit-iOS-Pod:
-    :git: https://github.com/Jibestream/UIKit-iOS-Pod.git
-
-CHECKOUT OPTIONS:
-  JMapiOSSDK:
-    :commit: 4839567fac5c4316b7df86b4ec014e17bf4a2b48
-    :git: https://github.com/Jibestream/JMap-iOS-SDK-Pod.git
-  UIKit-iOS-Pod:
-    :commit: cd46e9831d20844c2ac93cd7c2f7410e2d4eed73
-    :git: https://github.com/Jibestream/UIKit-iOS-Pod.git
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Analytics: 77fd5fb102a4a5eedafa2c2b0245ceb7b7c15e45
-  Contentful: 1cd45133c7ff270439e6cc806ca0100f57242b83
-  ContentfulRichTextRenderer: 20b89ee4e11aade03345879249e0430726a097bb
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 497158b816d0a86fc31babbd05546fcd7e6083ff
@@ -169,16 +134,12 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 0048df6388dab1c254799f2a30365b1dffe20422
   GoogleDataTransportCCTSupport: f880d70972efa2ed1be4e9173a0f4c5f3dc2d176
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
-  Intercom: f63e30d10c658b4f5817f5693e5ee2fa070b5803
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
-  JMapiOSSDK: 9c5d48b528a4dd668bbaae5dd508e58f7c49381c
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  Stripe: fa837c60f0644b488c994024ce7d9b001ea4e97c
-  UIKit-iOS-Pod: 69e11edd984234421b924f3ef2fa994f05d1d9c1
 
-PODFILE CHECKSUM: 6643ebe40b0802f3268e9a03fa72afc4003d66f7
+PODFILE CHECKSUM: fb512e1282a99b82de199d7f6e95a7ac1bc8e223
 
 COCOAPODS: 1.8.4

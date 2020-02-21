@@ -12,12 +12,7 @@ def shared_pods
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Analytics'
-  pod 'JMapiOSSDK', :git => 'https://github.com/Jibestream/JMap-iOS-SDK-Pod.git'
-  pod 'UIKit-iOS-Pod', :git => 'https://github.com/Jibestream/UIKit-iOS-Pod.git'
-  pod 'Stripe'
-  pod 'Intercom'
   pod 'JGProgressHUD'
-  pod 'ContentfulRichTextRenderer'
 end
 
 target 'Project' do
