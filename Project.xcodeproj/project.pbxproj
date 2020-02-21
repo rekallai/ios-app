@@ -775,7 +775,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Rekall;
 				TargetAttributes = {
 					718CDDE422A6793900C07C0E = {
@@ -840,8 +840,6 @@
 				71B0981F22B7EA2700502AEC /* ProductHorizontalCollectionCellSmall.xib in Resources */,
 				714F4AB322CE2D4A00FCF1A2 /* SF-Pro-Display-Bold.otf in Resources */,
 				71B0981122B7B1F000502AEC /* Home.storyboard in Resources */,
-				71B0981722B7D0B900502AEC /* ProductHorizontalCellSmall.xib in Resources */,
-				718CEDC322B2DA0B005CB60E /* HomeHorizontalCollectionCellLarge.xib in Resources */,
 				71B0981722B7D0B900502AEC /* ProductHorizontalCellSmall.xib in Resources */,
 				718CEDC322B2DA0B005CB60E /* HomeHorizontalCollectionCellLarge.xib in Resources */,
 				71B7D38822B2F309000C777E /* SF-Pro-Text-Bold.otf in Resources */,
