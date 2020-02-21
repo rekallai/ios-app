@@ -11,19 +11,14 @@ import Foundation
 struct User: Codable {
     var id:String
     var roles:[String]
-    var interestTopics:[String]
-    var favoriteVenueIds:[String]
     var email:String
     var firstName: String
     var lastName: String
     var createdAt:Date
     var updatedAt:Date
-    var stripeCustomerId: String?
-    var intercomUserHash: String?
-    var optIns: OptIns?
     
     static func anonymous()->User {
-        return User(id: "", roles: [], interestTopics: [], favoriteVenueIds: [], email: "", firstName: "", lastName: "", createdAt: Date(), updatedAt: Date(), stripeCustomerId: nil, intercomUserHash: nil, optIns: nil)
+        return User(id: "", roles: [], email: "", firstName: "", lastName: "", createdAt: Date(), updatedAt: Date())
     }
 
     func isAdmin() -> Bool {

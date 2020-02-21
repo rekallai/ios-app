@@ -35,11 +35,11 @@ public class CoreDataContext: NSManagedObject {
         shared = getCoreDataContext()
     }
     
-    func venuesUpdated() {
+    func shopsUpdated() {
         self.lastDataUpdate = Date()
     }
     
-    func venuesNeedUpdated() -> Bool {
+    func shopsNeedUpdated() -> Bool {
         guard let lastUpdate = lastDataUpdate else {
             return true
         }

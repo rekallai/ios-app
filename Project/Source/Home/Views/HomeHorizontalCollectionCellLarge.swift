@@ -1,5 +1,5 @@
 //
-//  VenuesHorizontalCollectionCell.swift
+//  ProductsHorizontalCollectionCell.swift
 //  Rekall
 //
 //  Created by Ray Hunter on 13/06/2019.
@@ -96,7 +96,7 @@ extension HomeHorizontalCollectionCellLarge: UICollectionViewDataSource, UIColle
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeHorizontalCellLarge.identifier,
                                                             for: indexPath) as? HomeHorizontalCellLarge else {
-                                                                fatalError("VenuesHorizontalCollectionCell failed to dequeue cell")
+                                                                fatalError("HomeHorizontalCollectionCell failed to dequeue cell")
         }
         
         cell.dataItem = dataItem

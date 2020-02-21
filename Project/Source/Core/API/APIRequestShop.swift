@@ -1,5 +1,5 @@
 //
-//  APIRequestVenue.swift
+//  APIRequestShop.swift
 //  Rekall
 //
 //  Created by Ray Hunter on 07/06/2019.

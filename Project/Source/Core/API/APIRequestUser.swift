@@ -27,9 +27,6 @@ class UserUpdateRequest: ADBaseRequest {
     var lastName: String?
     var email: String?
     var password: String?
-    var interestTopics: [String]?
-    var favoriteVenueIds: [String]?
-    var optIns: OptIns?
     override var path: String {
         return userRequestPath
     }
@@ -41,10 +38,7 @@ class UserUpdateRequest: ADBaseRequest {
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
-                password: password,
-                interestTopics: interestTopics,
-                favoriteVenueIds: favoriteVenueIds,
-                optIns: optIns
+                password: password
             )
         )
     }
@@ -54,9 +48,6 @@ class UserUpdateRequest: ADBaseRequest {
         let lastName: String?
         let email: String?
         let password: String?
-        let interestTopics: [String]?
-        let favoriteVenueIds: [String]?
-        let optIns: OptIns?
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  APIVenueTests.swift
+//  APIShopTests.swift
 //  RekallTests
 //
 //  Created by Ray Hunter on 05/06/2019.
@@ -9,20 +9,20 @@
 import XCTest
 @testable import Project
 
-class APIVenueTests: ADTestCase {
+class APIShopTests: ADTestCase {
 
-    func testEListVenues() {
-        let venueVM = ShopViewModel(api: api, store: store)
+    func testEListShops() {
+        let shopVM = ShopViewModel(api: api, store: store)
         
-        let venueExpectation = expectation(description: "Shop API")
-        venueVM.onUpdateSuccess = {
-            venueExpectation.fulfill()
+        let shopExpectation = expectation(description: "Shop API")
+        shopVM.onUpdateSuccess = {
+            shopExpectation.fulfill()
         }
-        venueVM.onUpdateFailure = { failure in
+        shopVM.onUpdateFailure = { failure in
             XCTFail()
         }
         
-        venueVM.loadVenues()
+        shopVM.loadShops()
         
         waitForExpectations(timeout: 3.0, handler: nil)
     }

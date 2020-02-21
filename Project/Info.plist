@@ -40,7 +40,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This allows us to use your location to determine if you're on-site, and if so to help you navigate to nearby venues.</string>
+	<string>This allows us to use your location to determine if you&apos;re on-site, and if so to help you navigate to nearby shops.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Send photos to help resolve app issues</string>
 	<key>SHARE_BASE_URL</key>

@@ -91,7 +91,7 @@ class RootViewController: UIViewController {
     func reloadVenues(onlyIfPreviouslyFailed: Bool) {
         venueVm.onUpdateSuccess = { [weak self] in
             self?.lastVenueLoadFailed = false
-            CoreDataContext.shared.venuesUpdated()
+            CoreDataContext.shared.shopsUpdated()
             BRPersistentContainer.shared.save()
         }
         
@@ -100,7 +100,7 @@ class RootViewController: UIViewController {
         }
         
         guard onlyIfPreviouslyFailed else {
-            if CoreDataContext.shared.venuesNeedUpdated() {
+            if CoreDataContext.shared.shopsNeedUpdated() {
                 venueVm.loadVenues()
             }
             return

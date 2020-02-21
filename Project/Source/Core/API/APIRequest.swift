@@ -14,12 +14,7 @@ struct APIRequest {
     struct AuthLogin: Codable {
         let email: String
         let password: String
-    }
-    
-    struct TicketOption: Codable {
-        let venueId: String?
-        let eventId: String?
-    }
+    }    
 }
 
 class ADBaseRequest: TargetType, AccessTokenAuthorizable {

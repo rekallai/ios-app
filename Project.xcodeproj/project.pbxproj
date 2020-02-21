@@ -10,6 +10,8 @@
 		164CBD248EBAF1E4F19C2016 /* Pods_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB0C83AA973113BF98AA7A7 /* Pods_ProjectTests.framework */; };
 		47733E12FDE03CD8898864F7 /* Pods_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC896379ED4D2F97634C6670 /* Pods_Project.framework */; };
 		7105276623FEF2F500D1CD4E /* Shop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7105276523FEF2F500D1CD4E /* Shop.storyboard */; };
+		7105276823FFFE8300D1CD4E /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71678DB223FDA75A000E93A5 /* ShopViewModel.swift */; };
+		7105276923FFFF1600D1CD4E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CDE1C22A6B24B00C07C0E /* API.swift */; };
 		711267472357C4840028C78D /* Optional+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711267462357C4840028C78D /* Optional+Unwrap.swift */; };
 		71239F8723FEAF680075A3BA /* DataItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71239F8623FEAF680075A3BA /* DataItemProvider.swift */; };
 		71239F8B23FEED110075A3BA /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71239F8A23FEED110075A3BA /* ProductsViewModel.swift */; };
@@ -51,7 +53,6 @@
 		718CDE3B22A6BD0100C07C0E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CDE2622A6B67B00C07C0E /* Store.swift */; };
 		718CDE4022A6BD0100C07C0E /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CDE1E22A6B30000C07C0E /* APIRequest.swift */; };
 		718CDE4122A6BD0100C07C0E /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CDE1F22A6B30000C07C0E /* APIErrorResponse.swift */; };
-		718CDE4222A6BD0100C07C0E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CDE1C22A6B24B00C07C0E /* API.swift */; };
 		718CDE5622A6D27400C07C0E /* APIAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CDE5522A6D27400C07C0E /* APIAuthTests.swift */; };
 		718CDE5A22A6D5BA00C07C0E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CDE5122A6CE4C00C07C0E /* ViewModel.swift */; };
 		718CDE5B22A6D5BA00C07C0E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718CDE5122A6CE4C00C07C0E /* ViewModel.swift */; };
@@ -1132,7 +1133,6 @@
 				714B20FB230EE55B00F016F4 /* User.swift in Sources */,
 				718CDE4122A6BD0100C07C0E /* APIErrorResponse.swift in Sources */,
 				718CDE3722A6BD0100C07C0E /* AppState.swift in Sources */,
-				718CDE4222A6BD0100C07C0E /* API.swift in Sources */,
 				718CDE7822A7D4B500C07C0E /* APIVenueTests.swift in Sources */,
 				718CDE4022A6BD0100C07C0E /* APIRequest.swift in Sources */,
 				714B2123230EFAA400F016F4 /* Notification+Names.swift in Sources */,
@@ -1145,6 +1145,8 @@
 				718CDE3A22A6BD0100C07C0E /* Store+Selectors.swift in Sources */,
 				71AED14E22A928B000A51BEB /* BR+CodingUserInfoKey.swift in Sources */,
 				718CDE6722A6DF3600C07C0E /* DateFormatter+Extensions.swift in Sources */,
+				7105276823FFFE8300D1CD4E /* ShopViewModel.swift in Sources */,
+				7105276923FFFF1600D1CD4E /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

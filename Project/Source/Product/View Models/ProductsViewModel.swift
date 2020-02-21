@@ -53,38 +53,38 @@ class ProductsViewModel: CoreDataViewModel {
     
     func loadProducts() {
         if loadingData {
-            print("ERROR: Product VM loadVenues: already loading data")
+            print("ERROR: Product VM loadProducts: already loading data")
             return
         }
 
         nextImportOrdinal = 0
-        let venueRequest = ProductRequest(shopId: shopId, skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
-        makeRequest(venueRequest)
+        let productRequest = ProductRequest(shopId: shopId, skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
+        makeRequest(productRequest)
     }
     
     private func loadMore() {
-        let venueRequest = ProductRequest(shopId: shopId, skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
-        makeRequest(venueRequest)
+        let productRequest = ProductRequest(shopId: shopId, skip: Int(nextImportOrdinal), limit: dataItemsPerCall)
+        makeRequest(productRequest)
     }
     
-    func makeRequest(_ venueRequest:ProductRequest) {
+    func makeRequest(_ productRequest:ProductRequest) {
         if loadingData {
             print("ERROR: Product VM makeRequest: already loading data")
             return
         }
         BRPersistentContainer.shared.save()
         loadingData = true
-        request(venueRequest) { result in
+        request(productRequest) { result in
             switch result {
             case .success(let results):
-                let nrVenuesLoaded = self.processApiResponse(response: results)
+                let nrProductsLoaded = self.processApiResponse(response: results)
                 
                 DispatchQueue.main.async {
                     self.loadingData = false
 
                     BRPersistentContainer.shared.save()
 
-                    if nrVenuesLoaded == self.dataItemsPerCall {
+                    if nrProductsLoaded == self.dataItemsPerCall {
                         self.loadMore()
                     } else {
                         self.onUpdateSuccess?()
@@ -108,20 +108,20 @@ class ProductsViewModel: CoreDataViewModel {
             if nextImportOrdinal == 0 {
 
                 //
-                // Delete all venues
+                // Delete all products
                 //
                 let fr: NSFetchRequest<NSFetchRequestResult> = Product.fetchRequest()
                 fr.includesPropertyValues = false
-                if let existingVenues = try workMoc.fetch(fr) as? [Product] {
-                    for v in existingVenues {
+                if let existingProducts = try workMoc.fetch(fr) as? [Product] {
+                    for v in existingProducts {
                         workMoc.delete(v)
                     }
                 }
             }
                               
             let result = try decodeResponse(ProductSearchResponse.self, response: response, moc: workMoc)
-            for venue in result.data {
-                venue.importOrdinal = nextImportOrdinal
+            for product in result.data {
+                product.importOrdinal = nextImportOrdinal
                 nextImportOrdinal += 1
             }
             
