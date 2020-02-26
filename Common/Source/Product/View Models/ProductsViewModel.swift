@@ -10,6 +10,7 @@ import UIKit
 import Moya
 import CoreData
 
+
 class ProductsViewModel: CoreDataViewModel {
     
     var shopId: String = ""
@@ -141,4 +142,24 @@ class ProductsViewModel: CoreDataViewModel {
     var numberOfItems: Int {
         return resultsController.fetchedObjects?.count ?? 0
     }
+}
+
+
+extension ProductsViewModel: RandomAccessCollection {
+    var startIndex: Int {
+        0
+    }
+    
+    var endIndex: Int {
+        numberOfItems
+    }
+    
+    subscript(position: Int) -> Product {
+        return product(at: position)!
+    }
+        
+    typealias Element = Product
+    typealias Index = Int
+    typealias SubSequence = Slice<ProductsViewModel>
+    typealias Indices = Range<Int>
 }
