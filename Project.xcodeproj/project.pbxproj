@@ -115,6 +115,8 @@
 		71A0358A24069D4C0055E58F /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A0358924069D4C0055E58F /* ProductsView.swift */; };
 		71A0358C24069DEB0055E58F /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A0358B24069DEB0055E58F /* ProductView.swift */; };
 		71A0358E240717630055E58F /* ProductFullscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A0358D240717630055E58F /* ProductFullscreenView.swift */; };
+		71A035CC2407DC7C0055E58F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A035CB2407DC7C0055E58F /* SceneDelegate.swift */; };
+		71A035CE2407DD3D0055E58F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A035CD2407DD3D0055E58F /* RootView.swift */; };
 		71A854A822AAB72D00DD8374 /* APIRequestShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A854A722AAB72D00DD8374 /* APIRequestShop.swift */; };
 		71A854AA22AAB86B00DD8374 /* APIRequestAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A854A922AAB86B00DD8374 /* APIRequestAuth.swift */; };
 		71AED14622A91D3200A51BEB /* Shop+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AED14422A91D3200A51BEB /* Shop+CoreDataClass.swift */; };
@@ -143,6 +145,7 @@
 		71B7D38622B2E081000C777E /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71B7D38422B2E081000C777E /* SF-Pro-Text-Medium.otf */; };
 		71B7D38822B2F309000C777E /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71B7D38722B2F309000C777E /* SF-Pro-Text-Bold.otf */; };
 		71B7D38922B2F309000C777E /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71B7D38722B2F309000C777E /* SF-Pro-Text-Bold.otf */; };
+		71BF65C32407DF0300E7DBDC /* ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BF65C22407DF0300E7DBDC /* ProjectUITests.swift */; };
 		71C2A34122F099580073FAEC /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C2A34022F099580073FAEC /* PassKit.framework */; };
 		71CB765A238D7BF5002EF8E7 /* CoreDataContext+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CB7658238D7BF5002EF8E7 /* CoreDataContext+CoreDataClass.swift */; };
 		71CB765D238D85C9002EF8E7 /* CoreDataContext+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CB7658238D7BF5002EF8E7 /* CoreDataContext+CoreDataClass.swift */; };
@@ -274,6 +277,8 @@
 		71A0358924069D4C0055E58F /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		71A0358B24069DEB0055E58F /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		71A0358D240717630055E58F /* ProductFullscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFullscreenView.swift; sourceTree = "<group>"; };
+		71A035CB2407DC7C0055E58F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		71A035CD2407DD3D0055E58F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		71A854A722AAB72D00DD8374 /* APIRequestShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestShop.swift; sourceTree = "<group>"; };
 		71A854A922AAB86B00DD8374 /* APIRequestAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestAuth.swift; sourceTree = "<group>"; };
 		71AED14422A91D3200A51BEB /* Shop+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shop+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -295,6 +300,7 @@
 		71B7D38122B2E062000C777E /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		71B7D38422B2E081000C777E /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		71B7D38722B2F309000C777E /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		71BF65C22407DF0300E7DBDC /* ProjectUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUITests.swift; sourceTree = "<group>"; };
 		71C2A34022F099580073FAEC /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		71CB7658238D7BF5002EF8E7 /* CoreDataContext+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataContext+CoreDataClass.swift"; sourceTree = "<group>"; };
 		71CB767D2391785E002EF8E7 /* EnvironmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentViewController.swift; sourceTree = "<group>"; };
@@ -615,6 +621,7 @@
 		718CDE0922A6793A00C07C0E /* ProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
+				71BF65C22407DF0300E7DBDC /* ProjectUITests.swift */,
 				718CDE0C22A6793A00C07C0E /* Info.plist */,
 			);
 			path = ProjectUITests;
@@ -630,6 +637,7 @@
 				718CEDC522B2DAC6005CB60E /* Home */,
 				718CDE5C22A6D75800C07C0E /* Auth */,
 				718CDDE822A6793900C07C0E /* AppDelegate.swift */,
+				71A035CB2407DC7C0055E58F /* SceneDelegate.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -815,6 +823,7 @@
 			isa = PBXGroup;
 			children = (
 				71AED16422A9357000A51BEB /* RootViewController.swift */,
+				71A035CD2407DD3D0055E58F /* RootView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -1054,6 +1063,7 @@
 					};
 					718CDE0522A6793A00C07C0E = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 718CDDE422A6793900C07C0E;
 					};
 				};
@@ -1395,6 +1405,7 @@
 				AA8D04A82315186600FEB959 /* ProfileTableView.swift in Sources */,
 				71B0981D22B7EA2700502AEC /* ProductHorizontalCollectionCellSmall.swift in Sources */,
 				AA0753E422D895D10036498F /* PreAuthViewController.swift in Sources */,
+				71A035CE2407DD3D0055E58F /* RootView.swift in Sources */,
 				71A854AA22AAB86B00DD8374 /* APIRequestAuth.swift in Sources */,
 				718CEDCD22B2DF1E005CB60E /* HomeHorizontalCellLarge.swift in Sources */,
 				71B0981922B7D5FC00502AEC /* ProductHorizontalCellSmall.swift in Sources */,
@@ -1424,6 +1435,7 @@
 				71DE53D822FB11E100F2AAF7 /* AuthTextInputCell.swift in Sources */,
 				718CDE2E22A6B75200C07C0E /* Store+Selectors.swift in Sources */,
 				71239F8D23FEEDD30075A3BA /* APIRequestProduct.swift in Sources */,
+				71A035CC2407DC7C0055E58F /* SceneDelegate.swift in Sources */,
 				71678DB323FDA75A000E93A5 /* ShopViewModel.swift in Sources */,
 				71CB7680239179E0002EF8E7 /* AppEnvironment.swift in Sources */,
 				AA8A4F2B22B91C0A00922C14 /* BorderButton.swift in Sources */,
@@ -1493,6 +1505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71BF65C32407DF0300E7DBDC /* ProjectUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1804,7 +1817,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1859,7 +1872,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1978,6 +1991,7 @@
 			baseConfigurationReference = EB066B58D0CA7BF2255AC595 /* Pods-Project-ProjectUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProjectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1987,6 +2001,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rekall.ProjectUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Project;
@@ -1998,6 +2013,7 @@
 			baseConfigurationReference = F0D1F2DA8A9AAE77715E2C3A /* Pods-Project-ProjectUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProjectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2064,7 +2080,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2127,6 +2143,7 @@
 			baseConfigurationReference = 882E84687916F2D3B66F0465 /* Pods-Project-ProjectUITests.staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ProjectUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2136,6 +2153,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rekall.ProjectUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Project;
