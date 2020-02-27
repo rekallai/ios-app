@@ -104,9 +104,11 @@ extension HomeViewController: HomeHorizontalCollectionDelegate {
 extension HomeViewController: ProfileButtonDelegate {
     
     func profileButtonTapped() {
-        if let vc = UIStoryboard.preAuth(), let preAuthVC = vc.viewControllers.first as? PreAuthViewController {
+        let sb = UIStoryboard(name: "Auth", bundle: nil)
+        if let navVC = sb.instantiateInitialViewController() as? UINavigationController,
+        let preAuthVC = navVC.viewControllers.first as? PreAuthViewController {
             preAuthVC.signUpFlow = false
-            present(vc, animated: true, completion:nil)
+            present(navVC, animated: true, completion:nil)
         }
     }
 }
