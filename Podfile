@@ -10,7 +10,6 @@ def shared_pods
   pod 'Firebase/Core'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'Analytics'
   pod 'JGProgressHUD'
 end
 
@@ -22,6 +21,7 @@ target 'Project' do
 
   # Pods for Project
   shared_pods
+  pod 'Analytics'
 
   target 'ProjectTests' do
     inherit! :search_paths
